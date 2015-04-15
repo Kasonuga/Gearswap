@@ -1,2 +1,4 @@
 # Gearswap
-75 Cap lua file's
+
+Personalized versions of Mote's lua file's
+designed around 75 cap and personal preference
