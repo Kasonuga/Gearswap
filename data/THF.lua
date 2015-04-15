@@ -120,7 +120,7 @@ function init_gear_sets()
     -- Generic spell recast set
     sets.midcast.FastRecast = {
     head="Walahra Turban", neck="Tiercel Necklace", body="Rapparee Harness", lear="Loquacious Earring",
-    hands="Dusk Gloves +1", waist="Velocious Belt", legs="Bravo's Subligar", feet="Dusk Ledelsens +1" }
+    hands="Dusk Gloves +1", waist="Velocious Belt", legs="Bravo's Subligar", feet="Homam Gambieras" }
         
     -- Specific spells
     sets.midcast.Utsusemi = sets.midcast.FastRecast
@@ -172,12 +172,12 @@ function init_gear_sets()
     sets.engaged = {
     head="Walahra Turban", neck="Tiercel Necklace", body="Rapparee Harness", lear="Suppanomimi", rear="Brutal Earring",
     hands="Dusk Gloves +1", ring1="Toreador's Ring", ring2="Rajas Ring", back="Cuchulain's Mantle",
-    waist="Velocious Belt", legs="Bravo's Subligar", feet="Dusk Ledelsens +1" }
+    waist="Velocious Belt", legs="Bravo's Subligar", feet="Homam Gambieras" }
 
     sets.engaged.Acc = {
     head="Walahra Turban", neck="Ancient Torque", body="Rapparee Harness", lear="Suppanomimi", rear="Brutal Earring",
     hands="Homam Corazza", hands="Homam Manopolas", ring1="Toreador's Ring", ring2="Rajas Ring", back="Cuchulain's Mantle",
-    waist="Velocious Belt", legs="Bravo's Subligar", feet="Dusk Ledelsens +1" }
+    waist="Velocious Belt", legs="Bravo's Subligar", feet="Homam Gambieras" }
     
     sets.engaged.Evasion = {
     head="Empress Hairpin", neck="Evasion Torque", lear="Triton Earring", rear="Triton Earring",

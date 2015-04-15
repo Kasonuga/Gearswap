@@ -99,7 +99,7 @@ function init_gear_sets()
     -- Generic spell recast set
     sets.midcast.FastRecast = {
     head="Walahra Turban", body="Hydra Haubert", hands="Dusk Gloves +1",
-    ring1="Blitz Ring", waist="Velocious Belt", feet="Dusk Ledelsens +1" }
+    ring1="Blitz Ring", waist="Velocious Belt", feet="Homam Gambieras" }
 
     -- Specific spells
     sets.midcast.Stoneskin = { body="Blood Scale Mail" }
@@ -108,7 +108,7 @@ function init_gear_sets()
     
     sets.midcast['Flash'] = {
     head="Walahra Turban",  body="Hydra Haubert", hands="Homam Manopolas", lring="Blitz Ring", rring="Hercules' Ring",
-    back="Cerb. Mantle +1", waist="Velocious Belt", legs="Vlr. Breeches +1", feet="Dusk Ledelsens +1" }
+    back="Cerb. Mantle +1", waist="Velocious Belt", legs="Vlr. Breeches +1", feet="Homam Gambieras" }
 
     --------------------------------------
     -- Idle/resting/defense/etc sets
@@ -163,44 +163,44 @@ function init_gear_sets()
     sets.engaged = {
     head="Walahra Turban", neck="Ancient Torque", lear="Suppanomimi", rear="Brutal Earring",
     body="Hydra Haubert", hands="Dusk Gloves +1", ring1="Toreador's Ring", ring2="Rajas Ring",
-    back="Cuchulain's Mantle", waist="Velocious Belt", legs="Aurum Cuisses", feet="Dusk Ledelsens +1" }
+    back="Cuchulain's Mantle", waist="Velocious Belt", legs="Aurum Cuisses", feet="Homam Gambieras" }
 
     sets.engaged.Acc = {
     head="Walahra Turban", neck="Ancient Torque", lear="Suppanomimi", rear="Brutal Earring",
     body="Hydra Haubert", hands="Homam Manopolas", ring1="Toreador's Ring", ring2="Rajas Ring",
-    back="Cuchulain's Mantle", waist="Velocious Belt", legs="Aurum Cuisses", feet="Aurum Sabatons" }
+    back="Cuchulain's Mantle", waist="Velocious Belt", legs="Aurum Cuisses", feet="Homam Gambieras" }
 
       
     -- Breath- melee group
     sets.engaged.Dragon = {
     head="Walahra Turban", neck="Ancient Torque", lear="Suppanomimi", rear="Brutal Earring",
     body="Blood Scale Mail", hands="Dusk Gloves +1", ring1="Toreador's Ring", ring2="Rajas Ring",
-    back="Cuchulain's Mantle", waist="Velocious Belt", legs="Aurum Cuisses", feet="Dusk Ledelsens +1" }
+    back="Cuchulain's Mantle", waist="Velocious Belt", legs="Aurum Cuisses", feet="Homam Gambieras" }
 
     sets.engaged.Acc.Dragon = {
     head="Walahra Turban", neck="Ancient Torque", lear="Suppanomimi", rear="Brutal Earring",
     body="Blood Scale Mail", hands="Homam Manopolas", ring1="Toreador's Ring", ring2="Rajas Ring",
-    back="Cuchulain's Mantle", waist="Velocious Belt", legs="Aurum Cuisses", feet="Aurum Sabatons" }
+    back="Cuchulain's Mantle", waist="Velocious Belt", legs="Aurum Cuisses", feet="Homam Gambieras" }
       
     -- Refresh melee group
     sets.engaged.Refresh = {
     head="", neck="Parade Gorget", lear="Suppanomimi", rear="Brutal Earring",
     body="Royal Cloak", hands="Dusk Gloves +1", ring1="Toreador's Ring", ring2="Rajas Ring",
-    back="Cuchulain's Mantle", waist="Velocious Belt", legs="Aurum Cuisses", feet="Dusk Ledelsens +1" }
+    back="Cuchulain's Mantle", waist="Velocious Belt", legs="Aurum Cuisses", feet="Homam Gambieras" }
 
     sets.engaged.Acc.Refresh = {
     head="", neck="Parade Gorget", lear="Suppanomimi", rear="Brutal Earring",
     body="Royal Cloak", hands="Homam Manopolas", ring1="Toreador's Ring", ring2="Rajas Ring",
-    back="Cuchulain's Mantle", waist="Velocious Belt", legs="Aurum Cuisses", feet="Aurum Sabatons" }
+    back="Cuchulain's Mantle", waist="Velocious Belt", legs="Aurum Cuisses", feet="Homam Gambieras" }
       
     -- GA melee group
     sets.engaged.GS = {
     head="Walahra Turban", neck="Ancient Torque", lear="Assault Earring", rear="Brutal Earring",
     body="Homam Corazza", hands="Dusk Gloves +1", ring1="Toreador's Ring", ring2="Rajas Ring",
-    back="Cerb. Mantle +1", waist="Velocious Belt", legs="Aurum Cuisses", feet="Dusk Ledelsens +1" }
+    back="Cerb. Mantle +1", waist="Velocious Belt", legs="Aurum Cuisses", feet="Homam Gambieras" }
 
     sets.engaged.Acc.GS = {
     head="Walahra Turban", neck="Ancient Torque", lear="Assault Earring", rear="Brutal Earring",
     body="Homam Corazza", hands="Homam Manopolas", ring1="Toreador's Ring", ring2="Rajas Ring",
-    back="Cuchulain's Mantle", waist="Velocious Belt", legs="Aurum Cuisses", feet="Aurum Sabatons" }
+    back="Cuchulain's Mantle", waist="Velocious Belt", legs="Aurum Cuisses", feet="Homam Gambieras" }
 end

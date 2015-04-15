@@ -52,8 +52,8 @@ function init_gear_sets()
 	-- Precast sets
 	--------------------------------------
 	
-	-- Sets to apply to arbitrary JAs
-	
+	-- Sets to apply to arbitrary JAsgit pu
+s	
 	-- Sets to apply to any actions of spell.type
 	sets.precast.Waltz = {
   	ammo="Bibiki Seashell", waist="Warwolf Belt" }
@@ -83,7 +83,7 @@ function init_gear_sets()
     -- Generic spell recast set
 	sets.midcast.FastRecast = {
    	head="Walahra Turban", hands="Dusk Gloves +1", waist="Velocious Belt",
-   	legs="Byakko's Haidate", feet="Dusk Ledelsens +1", ring1="Blitz ring" }
+   	legs="Byakko's Haidate", feet="Homam Gambieras", ring1="Blitz ring" }
 		
 	-- Specific spells
 	sets.midcast.Utsusemi = {}
@@ -151,7 +151,7 @@ function init_gear_sets()
 	sets.engaged = {
   	ammo="Tiphia Sting", head="Walahra Turban", neck="Ancient Torque", body="Homam Corazza",
  	hands="Dusk Gloves +1", waist="Velocious Belt", back="Cerb. Mantle +1",  legs="Aurum Cuisses",
-	feet="Dusk Ledelsens +1", lear="Assault Earring", rear="Brutal Earring", ring1="Blitz ring", ring2="Rajas Ring" }
+	feet="Homam Gambieras", lear="Assault Earring", rear="Brutal Earring", ring1="Blitz ring", ring2="Rajas Ring" }
 
   	sets.engaged.Acc = {
   	ammo="Tiphia Sting", head="Walahra Turban", neck="Ancient Torque", body="Homam Corazza",
