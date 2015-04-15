@@ -130,6 +130,8 @@ function init_gear_sets()
     main="Chatoyant Staff", neck="Dark Torque", lear="Dark Earring", body="Glamor Jupon",
     hands="Blood Fng. Gnt.", back="Hecate's Cape", waist="Witch Sash" }
 
+    sets.midcast.Bio = sets.midcast.FastRecast
+
     sets.midcast['Elemental Magic'] = {
     main="Chatoyant Staff", head="Warlock's Chapeau", neck="Lmg. Medallion +1", lear="Moldavite Earring", rear="Elemental Earring",
     body="Mahatma Hpl.", hands="Zenith Mitts +1", lring="Omn. Ring +1", rring="Omn. Ring +1",
