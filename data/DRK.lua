@@ -23,7 +23,7 @@ end
 
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
-	state.OffenseMode:options('Scythe', 'GS', 'DualWield ')
+	state.OffenseMode:options('Scythe', 'GS', 'DualWield')
 	state.RangedMode:options('Normal')
 	state.HybridMode:options('Normal')
 	state.WeaponskillMode:options('Normal')
@@ -79,7 +79,7 @@ function init_gear_sets()
 	--------------------------------------
 
     -- Generic spell recast set
-	sets.midcast.FastRecast = {}
+	sets.midcast.FastRecast = {
 	head="Walahra Turban", rear="Loquacious Earring", hands="Dusk Gloves +1", waist="Velocious Belt", feet="Dusk Ledelsens +1"}
 		
 	-- Specific spells
