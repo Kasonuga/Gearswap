@@ -53,9 +53,6 @@ function init_gear_sets()
 	--------------------------------------
 	
 	-- Sets to apply to arbitrary JAs
-    sets.precast.JA['Provoke']  = { 
-    head="Hydra Salade", body="Hydra Haubert", hands="Valor Gauntlets", lring="Mermaid's Ring",
-    rring="Hercules' Ring", back="Lamia Mantle +1", waist="Warwolf Belt" }
 	
 	-- Sets to apply to any actions of spell.type
 	sets.precast.Waltz = {
