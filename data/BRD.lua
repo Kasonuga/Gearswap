@@ -167,7 +167,7 @@ function init_gear_sets()
     sets.midcast.Curaga = sets.midcast.Cure
 
     sets.midcast.Stoneskin = {
-    main="Chatoyant Staff", sub="Light Grip", range="Iron Ram Horn", head="Zenith Crown +1", body="Mahatma Hpl.", hands="Dvt. Mitts +1",
+    main="Chatoyant Staff", sub="Light Grip", range="Iron Ram Horn", head="Goliard Chapaeu", body="Mahatma Hpl.", hands="Dvt. Mitts +1",
     legs="Mahatma Slops", feet="Suzaku's Sune-ate", neck="Promise Badge", waist="Pythia Sash +1", left_ear="Celestial Earring", right_ear="Celestial Earring",
     left_ring="Celestial Ring", right_ring="Celestial Ring", back="Ixion Cape"  }
         
@@ -178,7 +178,7 @@ function init_gear_sets()
     
     -- Resting sets
     sets.resting = {
-    main=gear.Staff.HMP, head="Mirror Tiara", neck="Beak Necklace +1", lear="Rapture Earring", rear="Antivenom Earring",
+    main=gear.Staff.HMP, head="Goliard Chapaeu", neck="Beak Necklace +1", lear="Rapture Earring", rear="Antivenom Earring",
     body="Mahatma Hpl.", hands="", ring1="Celestial Ring", ring2="Celestial Ring", back="Invigorating Cape",
     waist="Qiqirn Sash +1", legs="Baron's Slops", feet="Arborist Nails" }
     

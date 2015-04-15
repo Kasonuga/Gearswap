@@ -92,19 +92,19 @@ function init_gear_sets()
     -- Cure sets
 
     sets.midcast.Cure = {
-    main="Chatoyant Staff" , ammo="White Tathlum", neck="Fylgja Torque +1", lear="Roundel Earring", rear="Celestial Earring",
+    main="Chatoyant Staff", ammo="White Tathlum", neck="Fylgja Torque +1", lear="Roundel Earring", rear="Celestial Earring",
     head="Goliard Chapeau", body="Goliard Saio", hands="Devotee's Mitts +1", ring1="Celestial Ring", ring2="Celestial Ring",
-    back=gear.default.obi_back, waist="Pythia Sash +1", legs=" ", feet="Avocat Pigaches" }
+    back=gear.default.obi_back, waist="Pythia Sash +1", legs="Mahatma Slops", feet="Avocat Pigaches" }
 
     sets.midcast.Curaga = {
-    main="Chatoyant Staff" , ammo="White Tathlum", neck="Fylgja Torque +1", lear="Roundel Earring", rear="Celestial Earring",
+    main="Chatoyant Staff", ammo="White Tathlum", neck="Fylgja Torque +1", lear="Roundel Earring", rear="Celestial Earring",
     head="Goliard Chapeau", body="Goliard Saio", hands="Devotee's Mitts +1", ring1="Celestial Ring", ring2="Celestial Ring",
-    back=gear.default.obi_back, waist="Pythia Sash +1", legs=" ", feet="Avocat Pigaches" }
+    back=gear.default.obi_back, waist="Pythia Sash +1", legs="Mahatma Slops", feet="Avocat Pigaches" }
 
     sets.midcast.CureMelee = {
     ammo="White Tathlum", neck="Fylgja Torque +1", lear="Roundel Earring", rear="Celestial Earring",
     head="Goliard Chapeau", body="Goliard Saio", hands="Devotee's Mitts +1", ring1="Celestial Ring", ring2="Celestial Ring",
-    back=gear.default.obi_back, waist="Pythia Sash +1", legs=" ", feet="Avocat Pigaches" }
+    back=gear.default.obi_back, waist="Pythia Sash +1", legs="Mahatma Slops", feet="Avocat Pigaches" }
 
     sets.midcast.Cursna = {}
 
@@ -114,13 +114,15 @@ function init_gear_sets()
     neck="Enhancing Torque", rear="Augmenting Earring" }
 
     sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {
-    main="Chatoyant Staff", back="Prism Cape", lring="Celestial Ring", rring="Celestial Ring" } )
+    main="Mistilteinn", head="Goliard Chapaeu", neck="Promise Badge", left_ear="Celestial Earring", right_ear="Celestial Earring",
+    body="Mahatma Hpl.", hands="Dvt. Mitts +1", left_ring="Celestial Ring", right_ring="Celestial Ring",
+    back="Ixion Cape", waist="Pythia Sash +1", legs="Mahatma Slops", feet="Genie Huaraches"  }
 
     sets.midcast.BarElement = set_combine(sets.midcast['Enhancing Magic'], { } )
 
 
     sets.midcast['Dark Magic'] = {
-    neck="Dark Torque", lear="Dark Earring", rear="Incubus Earring +1", body="", hands="Sorcerer's Gloves",
+    main="Chatoyant Staff", neck="Dark Torque", lear="Dark Earring", rear="Incubus Earring +1", body="", hands="Sorcerer's Gloves",
     back="Hecate's Cape", waist="Witch Sash", legs="Wizard's Tonban", feet="Genie Huaraches" }
 
     sets.midcast['Elemental Magic'] = {
@@ -134,7 +136,7 @@ function init_gear_sets()
 
     -- Custom spell classes
     sets.midcast.MndEnfeebles = {   
-    main="Mistilteinn", sub="Nms. Shield +1", head="Dls. Chapeau +1", neck="Justice Badge", 
+    main="Mistilteinn", sub="Nms. Shield +1", head="Genie Tiara", neck="Justice Badge", 
     lear="Celestial Earring", rear="Celestial Earring", body="Mahatma Hpl.", hands="Devotee's Mitts +1",
     lring="Celestial Ring", rring="Celestial Ring", back="Prism Cape", waist="Witch Sash",
     legs="Genie Lappas", feet="Duelist's Boots" }
@@ -171,34 +173,34 @@ function init_gear_sets()
 
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
     sets.idle = {
-    main=gear.Staff.PDT, ammo="Hedgehog Bomb", head="Dls. Chapeau +1", neck="Orochi Nodowa +1",
+    main=gear.Staff.PDT, ammo="Hedgehog Bomb", head="Src. Petasos +1", neck="Orochi Nodowa +1",
     lear="Merman's Earring", rear="Merman's Earring", body="Dalmatica +1", hands=" ",
     lring="Merman's Ring", rring="Merman's Ring", back="Umbra Cape", waist="Resolute Belt", 
-    legs=" ", feet="Herald's Gaiters" }
+    legs="Genie Lappas", feet="Herald's Gaiters" }
 
     sets.idle.PDT = {
-    main=gear.Staff.PDT, ammo="Hedgehog Bomb", head="Dls. Chapeau +1", neck="Orochi Nodowa +1",
+    main=gear.Staff.PDT, ammo="Hedgehog Bomb", head="Src. Petasos +1", neck="Orochi Nodowa +1",
     lear="Merman's Earring", rear="Merman's Earring", body="Dalmatica +1", hands=" ",
     lring="Jelly Ring", rring="Merman's Ring", back="Umbra Cape", waist="Resolute Belt", 
-    legs=" ", feet="Herald's Gaiters" }
+    legs="Genie Lappas", feet="Herald's Gaiters" }
 
     sets.idle.MDT = {
-    main=gear.Staff.MDT, ammo="Hedgehog Bomb", head="Dls. Chapeau +1", neck="Orochi Nodowa +1",
+    main=gear.Staff.MDT, ammo="Hedgehog Bomb", head="Src. Petasos +1", neck="Orochi Nodowa +1",
     lear="Merman's Earring", rear="Merman's Earring", body="Dalmatica +1", hands=" ",
     lring="Merman's Ring", rring="Merman's Ring", back="Hexerei Cape", waist="Resolute Belt", 
-    legs=" ", feet="Herald's Gaiters" }
+    legs="Genie Lappas", feet="Herald's Gaiters" }
 
     sets.idle.Town = {
-    main=gear.Staff.PDT, ammo="Hedgehog Bomb", head="Dls. Chapeau +1", neck="Orochi Nodowa +1", 
+    main=gear.Staff.PDT, ammo="Hedgehog Bomb", head="Src. Petasos +1", neck="Orochi Nodowa +1", 
     lear="Merman's Earring", rear="Merman's Earring", body="Dalmatica +1", hands=" ",
     lring="Merman's Ring", rring="Merman's Ring", back="Umbra Cape", waist="Resolute Belt",
-    legs=" ", feet="Herald's Gaiters" }
+    legs="Genie Lappas", feet="Herald's Gaiters" }
     
     sets.idle.Weak = {
-    main=gear.Staff.PDT, ammo="Hedgehog Bomb", head="Dls. Chapeau +1", neck="Orochi Nodowa +1",
+    main=gear.Staff.PDT, ammo="Hedgehog Bomb", head="Src. Petasos +1", neck="Orochi Nodowa +1",
     lear="Merman's Earring", rear="Merman's Earring", body="Dalmatica +1", hands=" ",
     lring="Merman's Ring", rring="Merman's Ring", back="Umbra Cape", waist="Resolute Belt", 
-    legs=" ", feet="Herald's Gaiters" }
+    legs="Genie Lappas", feet="Herald's Gaiters" }
     
     -- Defense sets
 
@@ -206,10 +208,9 @@ function init_gear_sets()
     main=gear.Staff.PDT, neck="Orochi Nodowa +1", ring1="Jelly Ring", back="Umbra Cape"}
 
     sets.defense.MDT = {
-    head=" ",neck="Jeweled Collar +1", body="Dalmatica +1", hands=" ",
+    neck="Jeweled Collar +1", body="Dalmatica +1",
     ring1="Merman's Ring", ring2="Merman's Ring", waist="Resolute Belt", lear="Merman's Earring",
-    waist="Resolute Belt", rear="Merman's Earring", back="Resentment Cape", legs=" ",
-    feet=" " }
+    waist="Resolute Belt", rear="Merman's Earring" }
 
     sets.Kiting = { feet="Herald's Gaiters" }
 
@@ -223,9 +224,11 @@ function init_gear_sets()
     -- EG: sets.engaged.Dagger.Accuracy.Evasion
     
     -- Basic set for if no TP weapon is defined.
-    sets.engaged = { }
+    sets.engaged = {
+    rear="Brutal Earring", lring="Toreador's Ring", rring="Rajas Ring" }
 
-    sets.engaged.Acc = { }
+    sets.engaged.Acc = {
+    rear="Brutal Earring", lring="Toreador's Ring", rring="Rajas Ring" }
 
 
     -- Buff sets: Gear that needs to be worn to actively enhance a current player buff.

@@ -85,9 +85,9 @@ function init_gear_sets()
   -- Specific weaponskill sets.
   sets.precast.WS['Raging Rush'] = set_combine( sets.precast.Crit_WS, { neck="Ancient Torque", body="Zahak's Mail" } )
 
-  sets.precast.WS['Metatron Torment'] = set_combine( sets.precast.WS, {  neck="Flame Gorget", hands="Alkyoneus's Brc." } )
+  sets.precast.WS['Metatron Torment'] = set_combine( sets.precast.WS, { neck="Flame Gorget", hands="Alkyoneus's Brc." } )
 
-  sets.precast.WS['Steel Cyclone'] = set_combine( sets.precast.WS, {  hands="War. Mufflers +1" } )
+  sets.precast.WS['Steel Cyclone'] = set_combine( sets.precast.WS, { hands="War. Mufflers +1" } )
 
   
   --------------------------------------
