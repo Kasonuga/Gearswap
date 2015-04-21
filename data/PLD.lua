@@ -162,8 +162,8 @@ function init_gear_sets()
     -- Normal melee group
     sets.engaged = {
     head="Walahra Turban", neck="Ancient Torque", lear="Suppanomimi", rear="Brutal Earring",
-    body="Hydra Haubert", hands="Dusk Gloves +1", ring1="Toreador's Ring", ring2="Rajas Ring",
-    back="Cuchulain's Mantle", waist="Velocious Belt", legs="Homam Cosciales", feet="Homam Gambieras" }
+    body="Hydra Haubert", hands="Dusk Gloves +1", ring1="Blitz Ring", ring2="Rajas Ring",
+    back="Cerb. Mantle +1", waist="Velocious Belt", legs="Homam Cosciales", feet="Homam Gambieras" }
 
     sets.engaged.Acc = {
     head="Walahra Turban", neck="Ancient Torque", lear="Suppanomimi", rear="Brutal Earring",
@@ -186,7 +186,7 @@ function init_gear_sets()
     sets.engaged.Refresh = {
     head="", neck="Parade Gorget", lear="Suppanomimi", rear="Brutal Earring",
     body="Royal Cloak", hands="Dusk Gloves +1", ring1="Toreador's Ring", ring2="Rajas Ring",
-    back="Cuchulain's Mantle", waist="Velocious Belt", legs="Homam Cosciales", feet="Homam Gambieras" }
+    back="Cerb. Mantle +1", waist="Velocious Belt", legs="Homam Cosciales", feet="Homam Gambieras" }
 
     sets.engaged.Acc.Refresh = {
     head="", neck="Parade Gorget", lear="Suppanomimi", rear="Brutal Earring",
@@ -196,7 +196,7 @@ function init_gear_sets()
     -- GA melee group
     sets.engaged.GS = {
     head="Walahra Turban", neck="Ancient Torque", lear="Assault Earring", rear="Brutal Earring",
-    body="Homam Corazza", hands="Dusk Gloves +1", ring1="Toreador's Ring", ring2="Rajas Ring",
+    body="Homam Corazza", hands="Dusk Gloves +1", ring1="Blitz Ring", ring2="Rajas Ring",
     back="Cerb. Mantle +1", waist="Velocious Belt", legs="Homam Cosciales", feet="Homam Gambieras" }
 
     sets.engaged.Acc.GS = {
