@@ -87,7 +87,7 @@ function init_gear_sets()
     sets.precast.JA.Provoke = sets.TreasureHunter
 
     -- Sets for fast cast gear for spells
-    sets.precast.FC = { lear="Loquacious Earring" }
+    sets.precast.FC = { lear="Loquacious Earring", legs="Homam Cosciales" }
 
     -- Fast cast gear for specific spells or spell maps
     sets.precast.FC.Utsusemi = sets.precast.FC
@@ -120,7 +120,7 @@ function init_gear_sets()
     -- Generic spell recast set
     sets.midcast.FastRecast = {
     head="Walahra Turban", neck="Tiercel Necklace", body="Rapparee Harness", lear="Loquacious Earring",
-    hands="Dusk Gloves +1", waist="Velocious Belt", legs="Bravo's Subligar", feet="Homam Gambieras" }
+    hands="Dusk Gloves +1", waist="Velocious Belt", legs="Homam Cosciales", feet="Homam Gambieras" }
         
     -- Specific spells
     sets.midcast.Utsusemi = sets.midcast.FastRecast
@@ -136,15 +136,16 @@ function init_gear_sets()
     -- Idle sets
     sets.idle = {
     head="Hecatomb Cap +1", neck="Orochi Nodowa +1", lear="Merman's Earring", rear="Merman's Earring", hands="Denali Wristbands",
-    body="Homam Corazza", ring1="Merman's Ring", ring2="Merman's Ring", back="Lamia Mantle +1", waist="Resolute Belt", feet="Strider Boots" }
+    body="Homam Corazza", ring1="Merman's Ring", ring2="Merman's Ring", back="Lamia Mantle +1", waist="Resolute Belt", legs="Homam Cosciales", feet="Strider Boots" }
 
     sets.idle.Town = {
     head="Hecatomb Cap +1", neck="Orochi Nodowa +1", lear="Merman's Earring", rear="Merman's Earring", hands="Asn. Armlets +1",
-    body="Homam Corazza", ring1="Merman's Ring", ring2="Merman's Ring", back="Lamia Mantle +1", waist="Resolute Belt", feet="Strider Boots" }
+    body="Homam Corazza", ring1="Merman's Ring", ring2="Merman's Ring", back="Lamia Mantle +1", waist="Resolute Belt", legs="Homam Cosciales", feet="Strider Boots" }
     
     sets.idle.Weak = {
-    head="Hecatomb Cap +1", neck="Orochi Nodowa +1", lear="Merman's Earring", rear="Merman's Earring", hands="Denali Wristbands",
-    body="Homam Corazza", ring1="Merman's Ring", ring2="Merman's Ring", back="Lamia Mantle +1", waist="Resolute Belt", feet="Strider Boots" }
+    head="Hecatomb Cap +1", neck="Orochi Nodowa +1", lear="Merman's Earring", rear="Merman's Earring",
+    body="Homam Corazza", hands="Denali Wristbands", ring1="Merman's Ring", ring2="Merman's Ring",
+    back="Lamia Mantle +1", waist="Resolute Belt", legs="Homam Cosciales", feet="Strider Boots" }
     
     -- Defense sets
     sets.defense.PDT  = { 
@@ -172,17 +173,17 @@ function init_gear_sets()
     sets.engaged = {
     head="Walahra Turban", neck="Tiercel Necklace", body="Rapparee Harness", lear="Suppanomimi", rear="Brutal Earring",
     hands="Dusk Gloves +1", ring1="Toreador's Ring", ring2="Rajas Ring", back="Cuchulain's Mantle",
-    waist="Velocious Belt", legs="Bravo's Subligar", feet="Homam Gambieras" }
+    waist="Velocious Belt", legs="Homam Cosciales", feet="Homam Gambieras" }
 
     sets.engaged.Acc = {
     head="Walahra Turban", neck="Ancient Torque", body="Rapparee Harness", lear="Suppanomimi", rear="Brutal Earring",
     hands="Homam Corazza", hands="Homam Manopolas", ring1="Toreador's Ring", ring2="Rajas Ring", back="Cuchulain's Mantle",
-    waist="Velocious Belt", legs="Bravo's Subligar", feet="Homam Gambieras" }
+    waist="Velocious Belt", legs="Homam Cosciales", feet="Homam Gambieras" }
     
     sets.engaged.Evasion = {
     head="Empress Hairpin", neck="Evasion Torque", lear="Triton Earring", rear="Triton Earring",
     body="Antares Harness", hands="Denali Wristbands", ring1="Toreador's Ring", ring2="Rajas Ring",
-    back="Corse Cape", waist="Scouter's Rope", legs="Bravo's Subligar", feet="Dance Shoes +1" }
+    back="Corse Cape", waist="Scouter's Rope", legs="Homam Cosciales," feet="Dance Shoes +1" }
 end
 
 

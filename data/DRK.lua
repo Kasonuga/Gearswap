@@ -145,22 +145,22 @@ function init_gear_sets()
 	sets.engaged = {
 	ammo="Fire Bomblet", head="Walahra Turban", neck="Ancient Torque", lear="Assault Earring", rear="Brutal Earring",
 	body="Armada Hauberk", hands="Homam Manopolas", ring1="Blitz ring", ring2="Rajas Ring" 
-	back="Cerb. Mantle +1",waist="Velocious Belt", legs="Aurum Cuisses", feet="Homam Gambieras" }
+	back="Cerb. Mantle +1",waist="Velocious Belt", legs="Homam Cosciales", feet="Homam Gambieras" }
 		
 	sets.engaged.Scythe = {
 	ammo="Fire Bomblet", head="Walahra Turban", neck="Ancient Torque", lear="Assault Earring", rear="Brutal Earring",
 	body="Armada Hauberk", hands="Homam Manopolas", ring1="Blitz Ring", ring2="Rajas ring"
-	 back="Cerb. Mantle +1", waist="Velocious Belt",legs="Aurum Cuisses", feet="Homam Gambieras" }
+	 back="Cerb. Mantle +1", waist="Velocious Belt",legs="Homam Cosciales", feet="Homam Gambieras" }
 
 	sets.engaged.GS = {
 	ammo="Fire Bomblet", head="Walahra Turban", neck="Ancient Torque", lear="Assault Earring", rear="Brutal Earring",
 	body="Armada Hauberk", hands="Dusk Gloves +1", ring1="Blitz ring", ring2="Rajas ring"
-	 back="Cerb. Mantle +1", waist="Velocious Belt",legs="Aurum Cuisses", feet="Homam Gambieras" }
+	 back="Cerb. Mantle +1", waist="Velocious Belt",legs="Homam Cosciales", feet="Homam Gambieras" }
 
 	sets.engaged.DualWield = {
 	ammo="Fire Bomblet", head="Walahra Turban", neck="Ancient Torque", lear="Suppanomimi", rear="Brutal Earring",
 	body="Armada Hauberk", hands="Homam Manopolas", ring1="Toreador's ring", ring2="Rajas ring"
-	back="Cuchulain's Mantle", waist="Velocious Belt", legs="Aurum Cuisses", feet="Homam Gambieras" }
+	back="Cuchulain's Mantle", waist="Velocious Belt", legs="Homam Cosciales", feet="Homam Gambieras" }
 
 	--------------------------------------
 	-- Custom buff sets
