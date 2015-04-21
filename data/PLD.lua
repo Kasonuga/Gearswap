@@ -53,7 +53,7 @@ function init_gear_sets()
 
     -- Sets to apply to arbitrary JAs
     sets.precast.JA['Rampart'] = set_combine(sets.precast.JA, {
-    head="Valor Coronet" })
+    head="Vlr. Coronet +1" })
 
     sets.precast.JA['Sentinel'] = set_combine(sets.precast.JA, {
     feet="Vlr. Leggings +1" })
