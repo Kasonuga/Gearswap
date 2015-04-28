@@ -57,7 +57,7 @@ function init_gear_sets()
 
     -- Fast cast sets for spells
     sets.precast.FC = {
-    sub="Vivid Strap +1", head="Warlock's Chapeau", body="Dls. Tabard +1", lear="Loquacious Earring" }
+    sub="Vivid Strap +1", head="Wlk. Chapeau +1", body="Dls. Tabard +1", lear="Loquacious Earring" }
         
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {} )
 
@@ -90,7 +90,7 @@ function init_gear_sets()
     -- Midcast Sets
     
     sets.midcast.FastRecast = {
-    sub="Vivid Strap +1", head="Warlock's Chapeau", body="Goliard Saio", hands="Dusk Gloves +1",
+    sub="Vivid Strap +1", head="Wlk. Chapeau +1", body="Goliard Saio", hands="Dusk Gloves +1",
     lear="Loquacious Earring", feet="Dusk Ledelsens +1", waist="Velocious Belt" }
     
     -- Cure sets
@@ -133,7 +133,7 @@ function init_gear_sets()
     sets.midcast.Bio = sets.midcast.FastRecast
 
     sets.midcast['Elemental Magic'] = {
-    main="Chatoyant Staff", head="Warlock's Chapeau", neck="Lmg. Medallion +1", lear="Moldavite Earring", rear="Elemental Earring",
+    main="Chatoyant Staff", head="Wlk. Chapeau +1", neck="Lmg. Medallion +1", lear="Moldavite Earring", rear="Elemental Earring",
     body="Mahatma Hpl.", hands="Zenith Mitts +1", lring="Omn. Ring +1", rring="Omn. Ring +1",
     back="Hecate's Cape", waist=gear.ElementalObi, legs="Dls. Tights +1", feet="Dls. Boots +1" }
 

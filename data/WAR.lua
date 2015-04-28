@@ -66,7 +66,7 @@ function init_gear_sets()
   -- Sets to apply to any actions of spell.type
   sets.precast.Waltz = {
   ammo="Bibiki Seashell", head="Kaiser Schaller", body="Kaiser Cuirass", hands="Kaiser Handschuhs",
-  waist="Warwolf Belt", feet="Kaiser Schuhs" }
+  waist="Warwolf Belt", legs="Kaiser Diechlings", feet="Kaiser Schuhs" }
     
   -- Sets for specific actions within spell.type
   sets.precast.Waltz['Healing Waltz'] = {}
