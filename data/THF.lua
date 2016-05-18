@@ -20,7 +20,8 @@ function get_sets()
     mote_include_version = 2
     
     -- Load and initialize the include file.
-    include('Mote-Include.lua')
+    include('Mote-Include.lua')    
+    include('organizer-lib')
 end
 
 -- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
@@ -71,6 +72,11 @@ function init_gear_sets()
     --------------------------------------
     -- Precast sets
     --------------------------------------
+
+    -- miscelanious gear for organizer
+    sets.Collection = { 
+    main="Blau Dolch", sub="Thief's Knife", ranged="Ziska's Crossbow"
+      }
     
     -- Sets to apply to arbitrary JAs
     sets.TreasureHunter = { hands="Asn. Armlets +1" }
@@ -150,7 +156,7 @@ function init_gear_sets()
     -- Defense sets
     sets.defense.PDT  = { 
     neck="Orochi Nodowa +1", hands="Denali Wristbands", waist="Scouter's Rope", legs="Dst. Subligar +1", neck="Evasion Torque",
-    feet="Dst. Leggings +1", ring1="Jelly Ring", back="Corse Cape", lear="Triton Earring", rear="Triton Earring" }
+    feet="Dst. Leggings +1", ring1="Jelly Ring", back="Boxer's Mantle", lear="Triton Earring", rear="Triton Earring" }
 
     sets.defense.MDT = {
     lear="Merman's Earring", neck="Jeweled Collar +1", rear="Merman's Earring", ring1="Merman's Ring",
@@ -183,7 +189,7 @@ function init_gear_sets()
     sets.engaged.Evasion = {
     head="Empress Hairpin", neck="Evasion Torque", lear="Triton Earring", rear="Triton Earring",
     body="Antares Harness", hands="Denali Wristbands", ring1="Toreador's Ring", ring2="Rajas Ring",
-    back="Corse Cape", waist="Scouter's Rope", legs="Homam Cosciales," feet="Dance Shoes +1" }
+    back="Boxer's Mantle", waist="Scouter's Rope", legs="Homam Cosciales", feet="Dance Shoes +1" }
 end
 
 

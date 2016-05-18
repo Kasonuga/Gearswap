@@ -13,8 +13,11 @@ end
 
 -- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
 function job_setup()
-
-end
+                    state.Buff['Aftermath'] = buffactive['Aftermath: Lv.1'] or
+                    buffactive['Aftermath: Lv.2'] or
+                    buffactive['Aftermath: Lv.3']
+                    or false
+    end
 
 
 -------------------------------------------------------------------------------------------------------------------
@@ -82,7 +85,7 @@ s
 
     -- Generic spell recast set
 	sets.midcast.FastRecast = {
-   	head="Walahra Turban", hands="Dusk Gloves +1", waist="Velocious Belt",
+   	head="Walahra Turban", hands=gear.HasteHands, waist="Velocious Belt",
    	legs="Homam Cosciales", feet="Homam Gambieras", ring1="Blitz ring" }
 		
 	-- Specific spells
@@ -127,7 +130,7 @@ s
 	-- Defense sets
 	sets.defense.PDT = {
    	ammo="Bibiki Seashell", head="Dst. Cap +1", neck="Orochi Nodowa +1", body="Dst. Harness +1",
-   	hands="Dst. Mittens +1", ring1="Jelly Ring", legs="Dst. Subligar +1", feet="Askar Gambieras" }
+   	back="Boxer's Mantle", hands="Dst. Mittens +1", ring1="Jelly Ring", legs="Dst. Subligar +1", feet="Askar Gambieras" }
 
 	sets.defense.MDT = {
    	head="Coral Visor +1", neck="Jeweled Collar +1", body="Cor. Scale Mail +1", hands="Coral Fng. Gnt. +1",
@@ -150,13 +153,13 @@ s
 	-- Normal melee group
 	sets.engaged = {
   	ammo="Tiphia Sting", head="Walahra Turban", neck="Ancient Torque", body="Homam Corazza",
- 	hands="Dusk Gloves +1", waist="Velocious Belt", back="Cerb. Mantle +1", legs="Homam Cosciales",
+ 	hands=gear.HasteFeet, waist="Velocious Belt", back="Cerb. Mantle +1", legs="Homam Cosciales",
 	feet="Homam Gambieras", lear="Assault Earring", rear="Brutal Earring", ring1="Blitz ring", ring2="Rajas Ring" }
 
   	sets.engaged.Acc = {
   	ammo="Tiphia Sting", head="Walahra Turban", neck="Ancient Torque", body="Homam Corazza",
   	hands="Homam Manopolas", waist="Velocious Belt", back="Cerb. Mantle +1", legs="Homam Cosciales",
-  	feet="Aurum Sabatons", lear="Assault Earring", rear="Brutal Earring", ring1="Toreador's ring", ring2="Rajas Ring" }
+  	feet="Homam Gambieras", lear="Assault Earring", rear="Brutal Earring", ring1="Toreador's ring", ring2="Rajas Ring" }
 
 	--------------------------------------
 	-- Custom buff sets

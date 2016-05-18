@@ -8,6 +8,7 @@ function get_sets()
     
     -- Load and initialize the include file.
     include('Mote-Include.lua')
+    include('organizer-lib')
 end
 
 -- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
@@ -35,6 +36,9 @@ function user_setup()
     -- Additional local binds
     send_command('bind ^` input /ja "Light Arts" <me>')
     send_command('bind !` input /ja "Dark Arts" <me>')
+
+    gear.default.obi_waist = "Pythia Sash +1"
+    gear.default.obi_back = "Mahatma Cape"
 
 end
 
@@ -87,78 +91,84 @@ function init_gear_sets()
     -- Midcast Sets
     
     sets.midcast.FastRecast = {
-    main="Capricorn Staff", head="Walaha Turban", body="Goliard Saio", hands="Blessed Mitts +1",
+    head="Walahra Turban", body="Goliard Saio", hands="Blessed Mitts +1",
     legs="Blessed Trousers +1", feet="Blessed Pumps +1", waist="Headlong Belt" }
     
     -- Cure sets
-    gear.default.obi_waist = "Pythia Sash +1"
-    gear.default.obi_back = "Mahatma Cape"
 
     sets.midcast.CureSolace = {
     main="Chatoyant Staff" , ammo="White Tathlum",
-    head="Goliard Chapeau", neck="Fylgja Torque +1", lear="Celestial Earring", rear="Celestial Earring",
+    head="Goliard Chapeau", neck="Fylgja Torque +1", lear="Roundel Earring", rear="Celestial Earring",
     body="Aristocrat's Coat", hands="Blessed Mitts +1", ring1="Celestial Ring", ring2="Celestial Ring",
-    back=gear.default.obi_back, waist=gear.ElementalObi, legs="Blessed Trousers +1", feet="Blessed Pumps +1" }
+    back=gear.default.obi_back, waist=gear.ElementalObi, legs="Blessed Trousers +1", feet="Clr. Duckbills +1" }
 
     sets.midcast.Cure = {
     main="Chatoyant Staff" , ammo="White Tathlum",
-    head="Goliard Chapeau", neck="Fylgja Torque +1", lear="Celestial Earring", rear="Celestial Earring",
+    head="Goliard Chapeau", neck="Fylgja Torque +1", lear="Roundel Earring", rear="Celestial Earring",
     body="Aristocrat's Coat", hands="Blessed Mitts +1", ring1="Celestial Ring", ring2="Celestial Ring",
-    back=gear.default.obi_back, waist=gear.ElementalObi, legs="Blessed Trousers +1", feet="Blessed Pumps +1" }
+    back=gear.default.obi_back, waist=gear.ElementalObi, legs="Blessed Trousers +1", feet="Clr. Duckbills +1" }
+
+    sets.midcast['Cure V']= {
+    main="Chatoyant Staff" , ammo="Bibiki Seashell",
+    head="Goliard Chapeau", neck="Fylgja Torque +1", lear="Roundel Earring", rear="Celestial Earring",
+    body="Aristocrat's Coat", hands="Blessed Mitts +1", ring1="Celestial Ring", ring2="Celestial Ring",
+    back="Ixion Cape", waist=gear.ElementalObi, legs="Blessed Trousers +1", feet="Clr. Duckbills +1" }
 
     sets.midcast.Curaga = {
     main="Chatoyant Staff" , ammo="White Tathlum",
-    head="Goliard Chapeau", neck="Fylgja Torque +1", lear="Celestial Earring", rear="Celestial Earring",
+    head="Goliard Chapeau", neck="Fylgja Torque +1", lear="Roundel Earring", rear="Celestial Earring",
     body="Aristocrat's Coat", hands="Blessed Mitts +1", ring1="Celestial Ring", ring2="Celestial Ring",
-    back=gear.default.obi_back, waist=gear.ElementalObi, legs="Blessed Trousers +1", feet="Blessed Pumps +1" }
+    back=gear.default.obi_back, waist=gear.ElementalObi, legs="Blessed Trousers +1", feet="Clr. Duckbills +1" }
 
     sets.midcast.CureMelee = {
-    main="Chatoyant Staff" , ammo="White Tathlum",
-    head="Goliard Chapeau", neck="Fylgja Torque +1", lear="Celestial Earring", rear="Celestial Earring",
+    head="Goliard Chapeau", neck="Fylgja Torque +1", lear="Roundel Earring", rear="Celestial Earring",
     body="Aristocrat's Coat", hands="Blessed Mitts +1", ring1="Celestial Ring", ring2="Celestial Ring",
-    back=gear.default.obi_back, waist=gear.ElementalObi, legs="Blessed Trousers +1", feet="Blessed Pumps +1" }
+    back=gear.default.obi_back, waist=gear.ElementalObi, legs="Blessed Trousers +1", feet="Clr. Duckbills +1" }
 
     sets.midcast.Cursna = {}
 
     sets.midcast.StatusRemoval = {}
 
     -- 110 total Enhancing Magic Skill; caps even without Light Arts
-    sets.midcast['Enhancing Magic'] = {
-    neck="Enhancing Torque", lear="Augmenting Earring", feet="Cleric's Duckbills" }
+    sets.midcast['Enhancing Magic'] = set_combine(sets.midcast.FastRecast, {
+    neck="Enhancing Torque", lear="Augmenting Earring", feet="Clr. Duckbills +1" } )
 
     sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], { 
-    neck="mnd neck", lear="mnd ear", rear="mnd ear", ring2="Celestial Ring", waist="Pythia Sash +1",
-    body="Mahatma Hpl.", hands="Blessed Mitts +1", legs="Blessed Trousers +1", feet="Blessed Pumps +1" } )
+    neck="Promise Badge", ring1="Celestial Ring", ring2="Celestial Ring", hands="Blessed Mitts +1",
+    legs="Blessed Trousers +1" } )
 
     sets.midcast.BarElement = set_combine(sets.midcast['Enhancing Magic'], {
-    body="Blessed Briault", legs="Cleric's Duckbills" } )
+    body="Blessed Briault +1", legs="Clr. Pantaln. +1" } )
 
-    sets.midcast.Regen = {
-    body="Cleric's Briault" }
+    sets.midcast.Regen = set_combine(sets.midcast.FastRecast,  {
+    body="Cleric's Briault" } )
 
-    sets.midcast['Divine Magic'] = {
-    neck="Divine Torque", lear="Divine Earring" }
+    sets.midcast['Divine Magic'] = set_combine(sets.midcast.MndEnfeebles, {
+    neck="Divine Torque", lear="Divine Earring" } )
 
-    sets.midcast['Dark Magic'] = {
-    neck="Dark Torque", lear="Dark Earring" }
+    sets.midcast['Dark Magic'] = set_combine(sets.midcast.IntEnfeebles, {
+    neck="Dark Torque", lear="Dark Earring" } )
 
     -- Custom spell classes
     sets.midcast.MndEnfeebles = {
-    neck="Enfeebling Torque", lear="Enfeebling Earring", body="Healer's Briault", waist="Witch Sash",
-    hands="Blessed Mitts +1", legs="Blessed Trousers +1", feet="Avocat Pigaches" }
+    head="Elite Beret +1", neck="Enfeebling Torque", ear1="Enfeebling Earring", ear2="Incubus Earring +1",
+    body="Healer's Briault", hands="Clr. Mitts +1", ring1="Celestial Ring", ring2="Celestial Ring",
+    back="Hecate's Cape", waist="Witch Sash", legs="Bls. Trousers +1", feet="Avocat Pigaches" }
 
     sets.midcast.IntEnfeebles = {
-    neck="Enfeebling Torque", lear="Enfeebling Earring", body="Healer's Briault", waist="Witch Sash",
-    hands="Blessed Mitts +1", legs="Blessed Trousers +1", feet="Avocat Pigaches" }
+    head="Elite Beret +1", neck="Enfeebling Torque", ear1="Enfeebling Earring", ear2="Incubus Earring +1",
+    body="Healer's Briault", hands="Clr. Mitts +1", ring1="Omn. Ring +1", ring2="Omn. Ring +1",
+    back="Hecate's Cape", waist="Witch Sash", legs="Mahatma Slops", feet="Avocat Pigaches" }
 
     
     -- Sets to return to when not performing an action.
     
     -- Resting sets
     sets.resting = {
-    main=gear.Staff.HMP, sub="Flat Shield", head="Goliard Chapeau", neck="Beak Necklace +1", lear="Rapture Earring", rear="Antivenom Earring",
-    body="Mahatma Hpl.", hands="", ring1="Celestial Ring", ring2="Celestial Ring", back="Invigorating Cape",
-    waist="Qiqirn Sash +1", legs="Oracle's Braconi", feet="Avocat's Pigaches" }
+    main=gear.Staff.HMP, sub="Flat Shield",
+    head="Goliard Chapeau", neck="Beak Necklace +1", lear="Rapture Earring", rear="Antivenom Earring",
+    body="Mahatma Hpl.", hands="Hydra Gloves", ring1="Celestial Ring", ring2="Celestial Ring", back="Invigorating Cape",
+    waist="Qiqirn Sash +1", legs="Oracle's Braconi", feet="Avocat Pigaches" }
     
 
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
@@ -181,11 +191,16 @@ function init_gear_sets()
     -- Defense sets
 
     sets.defense.PDT = {
-    main=gear.Staff.PDT, back="Umbra Cape", neck="Orochi Nodowa +1", ring1="Jelly Ring" }
+    main="Terra's Staff", sub="Vivid Strap +1", ammo="White Tathlum",
+    head=naked, neck="Orochi Nodowa +1", ear1="Merman's Earring", ear2="Merman's Earring",
+    body="Ixion Cloak", hands="Merman's Bangles", ring1="Jelly Ring", ring2="Merman's Ring",
+    back="Umbra Cape", waist="Resolute Belt", legs="Mahatma Slops", feet="Herald's Gaiters" }
 
     sets.defense.MDT = {
-    main=gear.Staff.MDT, waist="Resolute Belt", neck="Jeweled Collar +1", lear="Merman's Earring",
-    ring1="Merman's Ring", rear="Merman's Earring", ring2="Merman's Ring" }
+    main="Terra's Staff", sub="Vivid Strap +1", ammo="White Tathlum",
+    neck="Orochi Nodowa +1", ear1="Merman's Earring", ear2="Merman's Earring",
+    hands="Merman's Bangles", ring1="Jelly Ring", ring2="Merman's Ring",
+    back="Hexerei Cape", waist="Resolute Belt", legs="Mahatma Slops", feet="Herald's Gaiters" }
 
     sets.Kiting = { feet="Herald's Gaiters" }
 

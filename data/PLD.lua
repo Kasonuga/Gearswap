@@ -8,6 +8,7 @@ function get_sets()
 
     -- Load and initialize the include file.
     include('Mote-Include.lua')
+    include('organizer-lib')
 end
 
 
@@ -45,6 +46,11 @@ function init_gear_sets()
     --------------------------------------
     -- Precast sets
     --------------------------------------
+    
+    -- miscelanious gear for organizer
+    sets.Collection = { 
+    main="Hauteclaire"
+    }
  
     sets.precast.JA = {
     head="Hydra Salade", neck="Harmonia's Torque", lear="Hades Earring +1", rear="Hades Earring +1",
@@ -64,9 +70,6 @@ function init_gear_sets()
     sets.precast.JA['Shield Bash'] = set_combine(sets.precast.JA, {
     hands="Vlr. Gauntlets +1", lear="Knightly Earring" })
 
-   -- sets.precast.JA['Provoke']  = sets.enmity
-
-   -- sets.precast.JA['Warcry']  = sets.enmity
       
     -- Sets to apply to any actions of spell.type
     sets.precast.Waltz = {
@@ -87,7 +90,7 @@ function init_gear_sets()
     sets.precast.WS = {
     head="Hecatomb Cap +1", neck=gear.ElementalGorget, lear="Suppanomimi", rear="Brutal Earring",
     body="Haubergeon +1", hands="Hct. Mittens +1", ring1="Triumph Ring +1", ring2="Rajas Ring",
-    back="Cerb. Mantle +1", waist="Cuchulain's Belt", legs="Hct. Subligar +1", feet="Hct. Leggings +1" }
+    back="Cuchulain's Mantle", waist="Cuchulain's Belt", legs="Hct. Subligar +1", feet="Hct. Leggings +1" }
 
     -- Specific weaponskill sets.
     sets.precast.WS['Vorpal Blade'] = set_combine(sets.precast.WS, { body="Zahak's Mail" } )
@@ -162,7 +165,7 @@ function init_gear_sets()
     -- Normal melee group
     sets.engaged = {
     head="Walahra Turban", neck="Ancient Torque", lear="Suppanomimi", rear="Brutal Earring",
-    body="Hydra Haubert", hands="Dusk Gloves +1", ring1="Blitz Ring", ring2="Rajas Ring",
+    body="Hydra Haubert", hands=gear.HasteHands, ring1="Blitz Ring", ring2="Rajas Ring",
     back="Cerb. Mantle +1", waist="Velocious Belt", legs="Homam Cosciales", feet="Homam Gambieras" }
 
     sets.engaged.Acc = {
@@ -174,8 +177,8 @@ function init_gear_sets()
     -- Breath- melee group
     sets.engaged.Dragon = {
     head="Walahra Turban", neck="Ancient Torque", lear="Suppanomimi", rear="Brutal Earring",
-    body="Blood Scale Mail", hands="Dusk Gloves +1", ring1="Blitz Ring", ring2="Rajas Ring",
-    back="Cuchulain's Mantle", waist="Velocious Belt", legs="Homam Cosciales", feet="Homam Gambieras" }
+    body="Blood Scale Mail", hands=gear.HasteHands, ring1="Blitz Ring", ring2="Rajas Ring",
+    back="Boxer's Mantle", waist="Velocious Belt", legs="Homam Cosciales", feet="Homam Gambieras" }
 
     sets.engaged.Acc.Dragon = {
     head="Walahra Turban", neck="Ancient Torque", lear="Suppanomimi", rear="Brutal Earring",
@@ -185,18 +188,18 @@ function init_gear_sets()
     -- Refresh melee group
     sets.engaged.Refresh = {
     head="", neck="Parade Gorget", lear="Suppanomimi", rear="Brutal Earring",
-    body="Royal Cloak", hands="Dusk Gloves +1", ring1="Toreador's Ring", ring2="Rajas Ring",
-    back="Cerb. Mantle +1", waist="Velocious Belt", legs="Homam Cosciales", feet="Homam Gambieras" }
+    body="Royal Cloak", hands=gear.HasteHands, ring1="Toreador's Ring", ring2="Rajas Ring",
+    back="Boxer's Mantle", waist="Velocious Belt", legs="Homam Cosciales", feet="Homam Gambieras" }
 
     sets.engaged.Acc.Refresh = {
     head="", neck="Parade Gorget", lear="Suppanomimi", rear="Brutal Earring",
     body="Royal Cloak", hands="Homam Manopolas", ring1="Toreador's Ring", ring2="Rajas Ring",
     back="Cuchulain's Mantle", waist="Velocious Belt", legs="Homam Cosciales", feet="Homam Gambieras" }
       
-    -- GA melee group
+    -- GS melee group
     sets.engaged.GS = {
     head="Walahra Turban", neck="Ancient Torque", lear="Assault Earring", rear="Brutal Earring",
-    body="Homam Corazza", hands="Dusk Gloves +1", ring1="Blitz Ring", ring2="Rajas Ring",
+    body="Homam Corazza", hands=gear.HasteHands, ring1="Blitz Ring", ring2="Rajas Ring",
     back="Cerb. Mantle +1", waist="Velocious Belt", legs="Homam Cosciales", feet="Homam Gambieras" }
 
     sets.engaged.Acc.GS = {

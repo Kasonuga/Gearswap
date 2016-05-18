@@ -8,6 +8,7 @@ function get_sets()
 
 	-- Load and initialize the include file.
 	include('Mote-Include.lua')
+    include('organizer-lib')
 end
 
 
@@ -63,10 +64,13 @@ function init_gear_sets()
 	-- Weaponskill sets
 	sets.precast.WS = {
 	head="Shr.Znr.Kabuto +1", neck=gear.ElementalGorget, lear="Merman's Earring", rear="Tmph. Earring +1",
-	body="Shura Togi +1", hands="Ochiudo Kote", lring="Toreador's Ring", rring="Rajas Ring",
+	body="Shura Togi +1", hands="Ochiudo's Kote", lring="Toreador's Ring", rring="Rajas Ring",
 	back="Cerb. Mantle +1", waist="Potent Belt", legs="Shura Haidate +1", feet="Denali Gamashes" }
 
 	-- Specific weaponskill sets.
+
+	sets.organizer = {
+	lear="Beetle Earring +1", rear="Beetle Earring +1", waist="Brown Belt", waist="Purple Belt", back="Nomad's mantle +1"}
 
 	
 	--------------------------------------
@@ -111,7 +115,7 @@ function init_gear_sets()
     sets.defense.PDT  = { 
     ammo="Bibiki Seashell", head="Arh. Jinpachi +1", neck="Evasion Torque", lear="Triton Earring", rear="Triton Earring",
     body="Arhat's Gi +1", hands="Denali Wristbands", ring1="Jelly Ring",
-    back="Corse Cape", waist="Scouter's Rope", legs="Dst. Subligar +1", feet="Dst. Leggings +1", }
+    back="Boxer's Mantle", waist="Scouter's Rope", legs="Dst. Subligar +1", feet="Dst. Leggings +1", }
 
     sets.defense.MDT = {
     neck="Jeweled Collar +1", lear="Merman's Earring", rear="Merman's Earring", hands="Denali Wristbands",
@@ -132,7 +136,7 @@ function init_gear_sets()
 	-- Normal melee group
 	sets.engaged = {
 	head="Walahra Turban", neck="Ancient Torque", lear="Merman's Earring", rear="Brutal Earring",
-	body="Shura Togi +1", hands="Ochiudo's Kote", lring="Toreador's Ring", rring="Rajas Ring",
+	body="Shura Togi +1", hands="Ochiudo's Kote", lring="Courage Ring +1", rring="Rajas Ring",
 	back="Cerb. Mantle +1", waist="Black Belt", legs="Byakko's Haidate", feet="Fuma Sune-Ate", }
 	sets.engaged.Acc = {}
 end

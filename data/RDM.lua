@@ -8,6 +8,7 @@ function get_sets()
 
 	-- Load and initialize the include file.
 	include('Mote-Include.lua')
+    include('organizer-lib')
 end
 
 
@@ -90,25 +91,27 @@ function init_gear_sets()
     -- Midcast Sets
     
     sets.midcast.FastRecast = {
-    sub="Vivid Strap +1", head="Wlk. Chapeau +1", body="Goliard Saio", hands="Dusk Gloves +1",
-    lear="Loquacious Earring", feet="Dusk Ledelsens +1", waist="Velocious Belt" }
+    sub="Vivid Strap +1", head="Wlk. Chapeau +1", body="Goliard Saio", hands=gear.HasteHands,
+    lear="Loquacious Earring", feet=gear.HasteFeet, waist="Velocious Belt" }
     
     -- Cure sets
 
     sets.midcast.Cure = {
-    main="Chatoyant Staff", ranged="Failnaught", head="Goliard Chapeau", neck="Fylgja Torque +1", lear="Roundel Earring", rear="Celestial Earring",
-    body="Goliard Saio", hands="Dusk Gloves +1", lring="Celestial Ring", rring="Celestial Ring",
-    back="Mahatma Cape", waist="Pythia Sash +1", legs="Mahatma Slops", feet="Dusk Ledelsens +1" }
+    main="Chatoyant Staff", ranged="Failnaught", 
+    head="Goliard Chapeau", neck="Fylgja Torque +1", lear="Roundel Earring", rear="Celestial Earring",
+    body="Goliard Saio", hands=gear.HasteHands, lring="Celestial Ring", rring="Celestial Ring",
+    back="Mahatma Cape", waist="Pythia Sash +1", legs="Mahatma Slops", feet=gear.HasteFeet }
 
     sets.midcast.Curaga = {
-    main="Chatoyant Staff", ranged="Failnaught", head="Goliard Chapeau", neck="Fylgja Torque +1", lear="Roundel Earring", rear="Celestial Earring",
-    body="Goliard Saio", hands="Dusk Gloves +1", lring="Celestial Ring", rring="Celestial Ring",
-    back="Mahatma Cape", waist="Pythia Sash +1", legs="Mahatma Slops", feet="Dusk Ledelsens +1" }
+    main="Chatoyant Staff", ranged="Failnaught",
+    head="Goliard Chapeau", neck="Fylgja Torque +1", lear="Roundel Earring", rear="Celestial Earring",
+    body="Goliard Saio", hands=gear.HasteHands, lring="Celestial Ring", rring="Celestial Ring",
+    back="Mahatma Cape", waist="Pythia Sash +1", legs="Mahatma Slops", feet=gear.HasteFeet }
 
     sets.midcast.CureMelee = {
-    ranged="Failnaught", neck="Fylgja Torque +1", head="Goliard Chapeau", lear="Roundel Earring", rear="Celestial Earring",
-    body="Goliard Saio", hands="Dusk Gloves +1", lring="Celestial Ring", rring="Celestial Ring",
-    back="Mahatma Cape", waist="Pythia Sash +1", legs="Mahatma Slops", feet="Dusk Ledelsens +1" }
+    neck="Fylgja Torque +1", head="Goliard Chapeau", lear="Roundel Earring", rear="Celestial Earring",
+    body="Goliard Saio", hands=gear.HasteHands, lring="Celestial Ring", rring="Celestial Ring",
+    back="Mahatma Cape", waist="Pythia Sash +1", legs="Mahatma Slops", feet=gear.HasteFeet }
 
     sets.midcast.Cursna = { }
 
@@ -118,7 +121,8 @@ function init_gear_sets()
     neck="Enhancing Torque", rear="Augmenting Earring", legs="Warlock's Tights" }
 
     sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {
-    main="Chatoyant Staff", body="Goliard Saio", back="Prism Cape", lring="Celestial Ring", rring="Celestial Ring" } )
+    main="Chatoyant Staff",
+    body="Goliard Saio", back="Prism Cape", lring="Celestial Ring", rring="Celestial Ring" } )
 
     sets.midcast.BarElement = set_combine(sets.midcast['Enhancing Magic'], {
     body="Glamor Jupon", hands="Dls. Gloves +1" } )
@@ -127,13 +131,15 @@ function init_gear_sets()
     neck="Divine Torque", lear="Divine Earring" }
 
     sets.midcast['Dark Magic'] = {
-    main="Chatoyant Staff", neck="Dark Torque", lear="Dark Earring", body="Glamor Jupon",
+    main="Chatoyant Staff",
+    neck="Dark Torque", lear="Dark Earring", body="Glamor Jupon",
     hands="Blood Fng. Gnt.", back="Hecate's Cape", waist="Witch Sash" }
 
     sets.midcast.Bio = sets.midcast.FastRecast
 
     sets.midcast['Elemental Magic'] = {
-    main="Chatoyant Staff", head="Wlk. Chapeau +1", neck="Lmg. Medallion +1", lear="Moldavite Earring", rear="Elemental Earring",
+    main="Chatoyant Staff",
+    head="Wlk. Chapeau +1", neck="Lmg. Medallion +1", lear="Moldavite Earring", rear="Elemental Earring",
     body="Mahatma Hpl.", hands="Zenith Mitts +1", lring="Omn. Ring +1", rring="Omn. Ring +1",
     back="Hecate's Cape", waist=gear.ElementalObi, legs="Dls. Tights +1", feet="Dls. Boots +1" }
 
@@ -147,13 +153,15 @@ function init_gear_sets()
 
     -- Custom spell classes
     sets.midcast.MndEnfeebles = {
-    main="Mistilteinn", sub="Nms. Shield +1", head="Dls. Chapeau +1", neck="Justice Badge", 
+    main="Mistilteinn", sub="Nms. Shield +1",
+    head="Dls. Chapeau +1", neck="Promise Badge", 
     lear="Celestial Earring", rear="Celestial Earring", body="Mahatma Hpl.", hands="Devotee's Mitts +1",
     lring="Celestial Ring", rring="Celestial Ring", back="Prism Cape", waist="Witch Sash",
     legs="Mahatma Slops", feet="Dls. Boots +1" }
 
     sets.midcast.MndEnfeebles.Resistant = {
-    main="Chatoyant Staff", head="Dls. Chapeau +1", neck="Enfeebling Torque", lear="Incubus Earring +1", rear="Incubus Earring +1",
+    main="Chatoyant Staff",
+    head="Dls. Chapeau +1", neck="Enfeebling Torque", lear="Incubus Earring +1", rear="Incubus Earring +1",
     body="Warlock's Tabard", hands="Devotee's Mitts +1", lring="Celestial Ring", rring="Celestial Ring",
     back="Hecate's Cape", waist="Witch Sash", legs="Mahatma Slops", feet="Avocat Pigaches" }
 
@@ -161,7 +169,8 @@ function init_gear_sets()
     sets.midcast['Silence'] = sets.midcast.MndEnfeebles.Resistant
 
     sets.midcast.IntEnfeebles = {
-    main="Chatoyant Staff", head="Dls. Chapeau +1", neck="Enfeebling Torque", lear="Incubus Earring +1", rear="Incubus Earring +1",
+    main="Chatoyant Staff",
+    head="Dls. Chapeau +1", neck="Enfeebling Torque", lear="Incubus Earring +1", rear="Incubus Earring +1",
     body="Warlock's Tabard", hands="Dls. Gloves +1", lring="Omn. Ring +1", rring="Omn. Ring +1",
     back="Hecate's Cape", waist="Witch Sash", legs="Mahatma Slops", feet="Avocat Pigaches" }
 
@@ -172,47 +181,47 @@ function init_gear_sets()
     
     -- Resting sets
     sets.resting = {
-    main=gear.Staff.HMP, sub="Flat Shield", head="Dls. Chapeau +1", neck="Beak Necklace +1",
-    lear="Rapture Earring", rear="Antivenom Earring", body="Mahatma Hpl.", hands="Hydra Gloves",
-    lring="Celestial Ring", rring="Celestial Ring", back="Invigorating Cape",
-    waist="Duelist's Belt", legs="Baron's Slops", feet="Avocat Pigaches" }
+    main=gear.Staff.HMP, sub="Flat Shield", 
+    head="Dls. Chapeau +1", neck="Beak Necklace +1", lear="Rapture Earring", rear="Antivenom Earring",
+    body="Mahatma Hpl.", hands="Hydra Gloves", lring="Celestial Ring", rring="Celestial Ring",
+    back="Invigorating Cape", waist="Duelist's Belt", legs="Baron's Slops", feet="Avocat Pigaches" }
     
 
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
     sets.idle = {
-    main=gear.Staff.PDT, ammo="Hedgehog Bomb", head="Dls. Chapeau +1", neck="Orochi Nodowa +1",
-    lear="Merman's Earring", rear="Merman's Earring", body="Dalmatica +1", hands="Coral Fng. Gnt. +1",
-    lring="Merman's Ring", rring="Merman's Ring", back="Umbra Cape", waist="Resolute Belt", 
-    legs="Blood Cuisses", feet="Coral Greaves +1" }
+    main=gear.Staff.PDT, ammo="Hedgehog Bomb",
+    head="Dls. Chapeau +1", neck="Orochi Nodowa +1", lear="Merman's Earring", rear="Merman's Earring",
+    body="Dalmatica +1", hands="Coral Fng. Gnt. +1", lring="Merman's Ring", rring="Merman's Ring",
+    back="Umbra Cape", waist="Resolute Belt", legs="Blood Cuisses", feet="Coral Greaves +1" }
 
     sets.idle.PDT = {
-    main=gear.Staff.PDT, ammo="Hedgehog Bomb", head="Dls. Chapeau +1", neck="Orochi Nodowa +1",
-    lear="Merman's Earring", rear="Merman's Earring", body="Dalmatica +1", hands="Dst. Mittens +1",
-    lring="Jelly Ring", rring="Merman's Ring", back="Umbra Cape", waist="Resolute Belt", 
-    legs="Blood Cuisses", feet="Dst. Leggings +1" }
+    main=gear.Staff.PDT, ammo="Hedgehog Bomb", 
+    head="Dls. Chapeau +1", neck="Orochi Nodowa +1", lear="Merman's Earring", rear="Merman's Earring",
+    body="Dalmatica +1", hands="Dst. Mittens +1", lring="Jelly Ring", rring="Merman's Ring",
+    back="Umbra Cape", waist="Resolute Belt", legs="Blood Cuisses", feet="Dst. Leggings +1" }
 
     sets.idle.MDT = {
-    main=gear.Staff.MDT, ammo="Hedgehog Bomb", head="Dls. Chapeau +1", neck="Orochi Nodowa +1",
-    lear="Merman's Earring", rear="Merman's Earring", body="Dalmatica +1", hands="Coral Fng. Gnt. +1",
-    lring="Merman's Ring", rring="Merman's Ring", back="Lamia Mantle +1", waist="Resolute Belt", 
-    legs="Blood Cuisses", feet="Coral Greaves +1" }
+    main=gear.Staff.MDT, ammo="Hedgehog Bomb",
+    head="Dls. Chapeau +1", neck="Orochi Nodowa +1", lear="Merman's Earring", rear="Merman's Earring",
+    body="Dalmatica +1", hands="Coral Fng. Gnt. +1", lring="Merman's Ring", rring="Merman's Ring",
+    back="Lamia Mantle +1", waist="Resolute Belt", legs="Blood Cuisses", feet="Coral Greaves +1" }
 
     sets.idle.Town = {
-    main=gear.Staff.PDT, ammo="Hedgehog Bomb", head="Dls. Chapeau +1", neck="Orochi Nodowa +1", 
-    lear="Merman's Earring", rear="Merman's Earring", body="Dalmatica +1", hands="Coral Fng. Gnt. +1",
-    lring="Merman's Ring", rring="Merman's Ring", back="Umbra Cape", waist="Resolute Belt",
-    legs="Blood Cuisses", feet="Coral Greaves +1" }
+    main=gear.Staff.PDT, ammo="Hedgehog Bomb",
+    head="Dls. Chapeau +1", neck="Orochi Nodowa +1", lear="Merman's Earring", rear="Merman's Earring",
+    body="Dalmatica +1", hands="Coral Fng. Gnt. +1", lring="Merman's Ring", rring="Merman's Ring",
+    back="Umbra Cape", waist="Resolute Belt", legs="Blood Cuisses", feet="Coral Greaves +1" }
     
     sets.idle.Weak = {
-    main=gear.Staff.PDT, ammo="Hedgehog Bomb", head="Dls. Chapeau +1", neck="Orochi Nodowa +1",
-    lear="Merman's Earring", rear="Merman's Earring", body="Dalmatica +1", hands="Coral Fng. Gnt. +1",
-    lring="Merman's Ring", rring="Merman's Ring", back="Umbra Cape", waist="Resolute Belt", 
-    legs="Blood Cuisses", feet="Coral Greaves +1" }
+    main=gear.Staff.PDT, ammo="Hedgehog Bomb",
+    head="Dls. Chapeau +1", neck="Orochi Nodowa +1", lear="Merman's Earring", rear="Merman's Earring",
+    body="Dalmatica +1", hands="Coral Fng. Gnt. +1", lring="Merman's Ring", rring="Merman's Ring", 
+    back="Umbra Cape", waist="Resolute Belt", legs="Blood Cuisses", feet="Coral Greaves +1" }
     
     -- Defense sets
 
     sets.defense.PDT = {
-    main=gear.Staff.PDT, head="Dst. Cap +1", neck="Orochi Nodowa +1", body="Dst. Harness +1", hands="Dst. Mittens +1",
+    main=gear.Staff.PDT, head="Darksteel Cap +1", neck="Orochi Nodowa +1", body="Dst. Harness +1", hands="Dst. Mittens +1",
     lring="Jelly Ring", back="Umbra Cape", legs="Dst. Subligar +1", feet="Dst. Leggings +1" }
 
     sets.defense.MDT = {
@@ -234,14 +243,14 @@ function init_gear_sets()
     
     -- Basic set for if no TP weapon is defined.
     sets.engaged = {
-    head="Walahra Turban", neck="Ancient Torque", body="Goliard Saio", hands="Dusk Gloves +1",
+    head="Walahra Turban", neck="Ancient Torque", body="Goliard Saio", hands=gear.HasteHands,
     lear="Suppanomimi", rear="Brutal Earring", back="Cerb. Mantle +1", lring="Toreador's Ring", rring="Rajas Ring",
-    waist="Velocious Belt", legs="Dusk Trousers +1", feet="Dusk Ledelsens +1" }
+    waist="Velocious Belt", legs="Dusk Trousers +1", feet=gear.HasteFeet }
 
     sets.engaged.Acc = {
-    head="Walahra Turban", neck="Ancient Torque", body="Goliard Saio", hands="Dusk Gloves +1",
+    head="Walahra Turban", neck="Ancient Torque", body="Goliard Saio", hands=gear.HasteHands,
     lear="Suppanomimi", rear="Brutal Earring", back="Cerb. Mantle +1", lring="Toreador's Ring", rring="Rajas Ring",
-    waist="Velocious Belt", legs="Dusk Trousers +1", feet="Dusk Ledelsens +1" }
+    waist="Velocious Belt", legs="Dusk Trousers +1", feet=gear.HasteFeet }
 end
 
 -------------------------------------------------------------------------------------------------------------------

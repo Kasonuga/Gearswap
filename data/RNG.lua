@@ -8,6 +8,7 @@ function get_sets()
 
 	-- Load and initialize the include file.
 	include('Mote-Include.lua')
+    include('organizer-lib')
 end
 
 
@@ -134,13 +135,13 @@ function init_gear_sets()
 	-- Normal melee group
 	sets.engaged = {ammo=gear.RAbullet,
     head="Walahra Turban", neck="Peacock Amulet", lear="Suppanomimi", rear="Brutal Earring",
-    body="Antares Harness", hands="Dusk Gloves +1", ring1="Toreador's Ring", ring2="Rajas Ring",
-    back="Cerb. Mantle +1", waist="Velocious Belt", legs="Byakko's Haidate", feet="Dusk Ledelsens +1"}
+    body="Antares Harness", hands=gear.HasteHands, ring1="Toreador's Ring", ring2="Rajas Ring",
+    back="Cerb. Mantle +1", waist="Velocious Belt", legs="Byakko's Haidate", feet=gear.HasteFeet}
 
 	sets.engaged.Acc = {ammo=gear.RAbullet,
     head="Walahra Turban", neck="Peacock Amulet", lear="Suppanomimi", rear="Brutal Earring",
-    body="Antares Harness", hands="Dusk Gloves +1", ring1="Toreador's Ring", ring2="Rajas Ring",
-    back="Cerb. Mantle +1", waist="Velocious Belt", legs="Byakko's Haidate", feet="Dusk Ledelsens +1"}
+    body="Antares Harness", hands=gear.HasteHands, ring1="Toreador's Ring", ring2="Rajas Ring",
+    back="Cerb. Mantle +1", waist="Velocious Belt", legs="Byakko's Haidate", feet=gear.HasteFeet}
 
 	--------------------------------------
 	-- Custom buff sets

@@ -45,6 +45,7 @@ function get_sets()
 
     -- Load and initialize the include file.
     include('Mote-Include.lua')
+    include('organizer-lib')
 end
 
 -- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
@@ -171,7 +172,7 @@ function init_gear_sets()
 
     -- Pact delay reduction gear
     sets.precast.BloodPactWard = {
-    body="Yinyang Robe", head="Penance Hat", hands="Summoner's Brcr.", legs="Summoner's Spats", feet="Summoner's Pgch." }
+    body="Yinyang Robe", head="Penance Hat", hands="Smn. Bracers +1", legs="Smn. Spats +1", feet="Smn. Pigaches +1" }
 
     sets.precast.BloodPactRage = sets.precast.BloodPactWard
 
@@ -222,13 +223,13 @@ function init_gear_sets()
     -- Spirits cast magic spells, which can be identified in standard ways.
     
     sets.midcast.Pet.WhiteMagic = {
-    legs="Summoner's Spats" }
+    legs="Smn. Spats +1" }
     
     sets.midcast.Pet['Elemental Magic'] = set_combine(sets.midcast.Pet.BloodPactRage, {
-    legs="Summoner's Spats" } )
+    legs="Smn. Spats +1" } )
 
     sets.midcast.Pet['Elemental Magic'].Resistant = set_combine(sets.midcast.Pet.BloodPactRage, {
-    legs="Summoner's Spats" } )
+    legs="Smn. Spats +1" } )
     
 
     --------------------------------------
@@ -243,11 +244,13 @@ function init_gear_sets()
     
     -- Idle sets
     sets.idle = {
-    main=gear.Staff.PDT, body="Yinyang Robe", back="Umbra Cape", legs="Summoner's Spats", feet="Herald's Gaiters", lring="Evoker's Ring" }
+    main=gear.Staff.PDT, sub="Vivid Strap +1", ammo="Hedgehog Bomb", head="Smn. Horn +1", body="Yinyang Robe", hands="Smn. Bracers +1",
+    back="Umbra Cape", legs="Smn. Spats +1", feet="Herald's Gaiters", lear="Merman's Earring", rear="Merman's Earring",
+    lring="Merman's Ring", rring="Merman's Ring", waist="Resolute Belt", neck="Orochi Nodowa +1" }
 
     sets.idle.PDT = {
     main=gear.Staff.PDT, body="Yinyang Robe", rring="Jelly Ring", back="Umbra Cape",
-    legs="Summoner's Spats", feet="Herald's Gaiters", lring="Evoker's Ring" }
+    legs="Smn. Spats +1", feet="Herald's Gaiters", lring="Evoker's Ring" }
 
     
     sets.idle.Avatar = {
@@ -276,7 +279,7 @@ function init_gear_sets()
     main="Chatoyant Staff" ,  lring="Evoker's Ring", body="Penance Robe", head="Penance Hat" }
 
     sets.perp.Weather = {
-    main="Chatoyant Staff" , head="Summoner's Horn", lring="Evoker's Ring", body="Penance Robe" }
+    main="Chatoyant Staff" , head="Smn. Horn +1", lring="Evoker's Ring", body="Penance Robe" }
     -- Carby: Mitts+Conv.feet = 1/tick perp.  Everything else should be +refresh
     sets.perp.Carbuncle = {
     main="Chatoyant Staff" , hands="Carbuncle Mitts", lring="Evoker's Ring", body="Yinyang Robe" }
@@ -295,8 +298,10 @@ function init_gear_sets()
     main=gear.Staff.PDT, rring="Jelly Ring", back="Umbra Cape" }
 
     sets.defense.MDT = {
-    main=gear.Staff.MDT, lear="Merman's Earring", rear="Merman's Earring",
-    lring="Merman's Ring", rring="Merman's Ring", waist="Resolute Belt" }
+    main="Terra's Staff", sub="Vivid Strap +1", ammo="White Tathlum",
+    neck="Orochi Nodowa +1", ear1="Merman's Earring", ear2="Merman's Earring",
+    hands="Merman's Bangles", ring1="Merman's Ring", ring2="Merman's Ring",
+    back="Hexerei Cape", waist="Resolute Belt", legs="Mahatma Slops", feet="Herald's Gaiters" }
 
     sets.Kiting = { feet="Herald's Gaiters" }
     

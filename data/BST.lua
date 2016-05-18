@@ -92,8 +92,8 @@ function init_gear_sets()
     -- Generic spell recast set
 	sets.midcast.FastRecast = {
   	head="Walahra Turban", neck="Tiercel Necklace", rear="Loquacious Earring", 
-  	hands="Dusk Gloves +1", ring1="Blitz Ring",
-  	waist="Velocious Belt", legs="Byakko's Haidate", feet="Dusk Ledelsens +1" }
+  	hands=gear.HasteHands, ring1="Blitz Ring",
+  	waist="Velocious Belt", legs="Byakko's Haidate", feet=gear.HasteFeet }
 		
 	-- Specific spells
 	sets.midcast.Utsusemi = sets.midcast.FastRecast
@@ -157,24 +157,24 @@ function init_gear_sets()
 	-- Normal melee group
   	sets.engaged = {
 	ammo="Fire Bomblet", head="Walahra Turban", neck="Ancient Torque", lear="Assault Earring", rear="Brutal Earring", 
-	body="Armada Hauberk", hands="Dusk Gloves +1", ring1="Toreador's Ring", ring2="Rajas Ring",
-	back="Cerb. Mantle +1", waist="Velocious Belt", legs="Byakko's Haidate", feet="Dusk Ledelsens +1" }
+	body="Armada Hauberk", hands=gear.HasteHands, ring1="Toreador's Ring", ring2="Rajas Ring",
+	back="Cerb. Mantle +1", waist="Velocious Belt", legs="Byakko's Haidate", feet=gear.HasteFeet }
 
   	sets.engaged.Acc = {
 	ammo="Fire Bomblet", head="Walahra Turban", neck="Ancient Torque", lear="Assault Earring", rear="Brutal Earring", 
-	body="Armada Hauberk", hands="Dusk Gloves +1", ring1="Toreador's Ring", ring2="Rajas Ring",
-	back="Cuchulain's Mantle", waist="Velocious Belt", legs="Byakko's Haidate", feet="Dusk Ledelsens +1" }
+	body="Armada Hauberk", hands=gear.HasteHands, ring1="Toreador's Ring", ring2="Rajas Ring",
+	back="Cuchulain's Mantle", waist="Velocious Belt", legs="Byakko's Haidate", feet=gear.HasteFeet }
 
 	-- Dual Wield Group
 	sets.engaged.DualWield = {
 	ammo="Fire Bomblet", head="Walahra Turban", neck="Ancient Torque", lear="Suppanomiimi", rear="Brutal Earring", 
-	body="Armada Hauberk", hands="Dusk Gloves +1", ring1="Toreador's Ring", ring2="Rajas Ring",
-	back="Cerb. Mantle +1", waist="Velocious Belt", legs="Byakko's Haidate", feet="Dusk Ledelsens +1" }
+	body="Armada Hauberk", hands=gear.HasteHands, ring1="Toreador's Ring", ring2="Rajas Ring",
+	back="Cerb. Mantle +1", waist="Velocious Belt", legs="Byakko's Haidate", feet=gear.HasteFeet }
 
 	sets.engaged.DualWield.Acc = {
 	ammo="Fire Bomblet", head="Walahra Turban", neck="Ancient Torque", lear="Suppanomiimi", rear="Brutal Earring", 
-	body="Armada Hauberk", hands="Dusk Gloves +1", ring1="Toreador's Ring", ring2="Rajas Ring",
-	back="Cuchulain's Mantle", waist="Velocious Belt", legs="Byakko's Haidate", feet="Dusk Ledelsens +1" }
+	body="Armada Hauberk", hands=gear.HasteHands, ring1="Toreador's Ring", ring2="Rajas Ring",
+	back="Cuchulain's Mantle", waist="Velocious Belt", legs="Byakko's Haidate", feet=gear.HasteFeet }
 
 	--------------------------------------
 	-- Custom buff sets

@@ -8,6 +8,7 @@ function get_sets()
 
     -- Load and initialize the include file.
     include('Mote-Include.lua')
+    include('organizer-lib')
 end
 
 
@@ -81,10 +82,11 @@ function init_gear_sets()
     
     sets.precast.JA['Provoke'] = {
     head="Arh. Jinpachi +1", neck="Harmonia's Torque", left_ear="Hades Earring +1", right_ear="Hades Earring +1",
-    body="Yasha Samue +1", hands="Yasha Tekko +1", left_ring="Mermaid Ring",
+    body="Yasha Samue +1", hands="Yasha Tekko +1", left_ring="Mermaid Ring", ammo="Nokizaru Shuriken",
     back="Cerb. Mantle +1", waist="Warwolf Belt", legs="Yasha Hakama +1", feet="Ysh. Sune-Ate +1" }
 
     sets.precast.Flourish1 = sets.precast.JA['Provoke']
+    sets.precast.JA['Warcry'] = sets.precast.JA['Provoke']
     
     -- Fast cast sets for spells
     
@@ -101,7 +103,7 @@ function init_gear_sets()
     waist="Cuchulain's Belt", legs="Byakko's Haidate", feet=gear.WeaponskillFeet }
     
     sets.precast.WS.Acc = set_combine(sets.precast.WS, {
-    back="Cuchulain's Mantle", waist="Cuchulain's Belt", lring="Toreador's Ring" } )
+    back="Cuchulain's Mantle", lring="Toreador's Ring" } )
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
     sets.precast.WS['Blade: Jin'] = set_combine( sets.precast.WS, {
@@ -123,8 +125,10 @@ function init_gear_sets()
     sets.midcast.Utsusemi = sets.midcast.FastRecast
     
     sets.midcast.ElementalNinjutsu = set_combine( sets.midcast.FastRecast, {
-    head="Ninja Hatsuburi", neck="Ninjutsu Torque", lear="Ninjutsu Earring", rear="Moldavite Earring",
-    waist="Koga Sarashi", feet="Kog. Kyahan +1" } )
+    ammo="Phtm. Tathlum", head="Ninja Hatsuburi", body="Yasha Samue +1", hands="Kog. Tekko +1",
+    legs="Sangoma Lappa", feet="Kog. Kyahan +1", neck="Ninjutsu Torque", waist="Koga Sarashi",
+    left_ear="Ninjutsu Earring", right_ear="Moldavite Earring", left_ring="Omn. Ring +1",
+    right_ring="Omn. Ring +1" } )
 
     sets.midcast.ElementalNinjutsu.Resistant = set_combine( sets.midcast.ElementalNinjutsu, { } )
 
@@ -134,7 +138,7 @@ function init_gear_sets()
 
     sets.midcast.NinjutsuBuff = {}
 
-    sets.midcast.RA = { hands="Ninja Tekko +1" }
+    --sets.midcast.RA = { hands="Ninja Tekko +1" }
     --------------------------------------
     -- Idle/resting/defense/etc. sets
     --------------------------------------
@@ -150,12 +154,7 @@ function init_gear_sets()
     ammo="Bibiki Seashell", head="Arh. Jinpachi +1", neck="Orochi Nodowa +1", lear="Merman's Earring",rear="Merman's Earring",
     body="War Shinobi Gi +1", hands="Denali Wristbands", lring="Merman's Ring", rring="Merman's Ring",
     back="Lamia Mantle +1", waist="Resolute Belt", legs="Dst. Subligar +1", feet=gear.MovementFeet }
-
-    sets.idle.Town = {
-    ammo="Bibiki Seashell", head="Arh. Jinpachi +1", neck="Orochi Nodowa +1", lear="Merman's Earring",rear="Merman's Earring",
-    body="Kingdom Aketon", hands="Denali Wristbands", lring="Merman's Ring", rring="Merman's Ring",
-    back="Lamia Mantle +1", waist="Resolute Belt", legs="Dst. Subligar +1", feet=gear.MovementFeet }
-        
+    
     sets.idle.Weak = {
     ammo="Bibiki Seashell", head="Arh. Jinpachi +1", neck="Orochi Nodowa +1", lear="Merman's Earring",rear="Merman's Earring",
     body="War Shinobi Gi +1", hands="Denali Wristbands", lring="Merman's Ring", rring="Merman's Ring",
@@ -167,7 +166,7 @@ function init_gear_sets()
     sets.defense.PDT  = { 
     ammo="Bibiki Seashell", head="Arh. Jinpachi +1", neck="Evasion Torque", lear="Triton Earring", rear="Triton Earring",
     body="Arhat's Gi +1", hands="Denali Wristbands", lring="Jelly Ring",
-    back="Corse Cape", waist="Scouter's Rope", legs="Dst. Subligar +1", feet="Dst. Leggings +1", }
+    back="Boxer's Mantle", waist="Scouter's Rope", legs="Dst. Subligar +1", feet="Dst. Leggings +1" }
 
     sets.defense.MDT = {
     neck="Jeweled Collar +1", lear="Merman's Earring", rear="Merman's Earring", hands="Denali Wristbands", 
@@ -201,13 +200,13 @@ function init_gear_sets()
     
     sets.engaged.Evasion = {
     ammo="White Tathlum", head="Empress Hairpin", neck="Evasion Torque", body="Antares Harness", lear="Triton Earring",
-    rear="Triton Earring", hands="Rasetsu Tekko +1", lring="Toreador's Ring", rring="Rajas Ring", back="Corse Cape",
-    waist="Koga Sarashi", legs="Kog. Hakama +1", feet="Dance Shoes +1" }
+    rear="Triton Earring", hands="Rasetsu Tekko +1", lring="Toreador's Ring", rring="Rajas Ring", back="Boxer's Mantle",
+    waist="Scouter's Rope", legs="Kog. Hakama +1", feet="Dance Shoes +1" }
     
     sets.engaged.Acc.Evasion = {
     ammo="Fire Bomblet", head="Walahra Turban", neck="Ancient Torque", body="Antares Harness", lear="Triton Earring",
     rear="Triton Earring", hands=gear.HasteHands, lring="Toreador's Ring", rring="Rajas Ring", back="Cuchulain's Mantle",
-    waist="Koga Sarashi", legs="Kog. Hakama +1", feet="Dance Shoes +1" }
+    waist="Scouter's Rope", legs="Kog. Hakama +1", feet="Dance Shoes +1" }
     
     sets.engaged.DPS = {
     ammo="White Tathlum", head="Walahra Turban", neck="Tiercel Necklace", body="Haubergeon +1", lear="Suppanomimi",
@@ -236,7 +235,7 @@ function init_gear_sets()
     
     sets.engaged.Evasion.HighHaste = {
     ammo="White Tathlum", head="Empress Hairpin", neck="Evasion Torque", body="Antares Harness", lear="Triton Earring",
-    rear="Triton Earring", hands="Rasetsu Tekko +1", lring="Toreador's Ring", rring="Rajas Ring", back="Corse Cape",
+    rear="Triton Earring", hands="Rasetsu Tekko +1", lring="Toreador's Ring", rring="Rajas Ring", back="Boxer's Mantle",
     waist="Koga Sarashi", legs="Kog. Hakama +1", feet="Dance Shoes +1" }
     
     sets.engaged.Acc.Evasion.HighHaste = {
@@ -258,23 +257,23 @@ function init_gear_sets()
     ---- Custom melee group: Max Haste (0% DW)
     --------------------------------------
     sets.engaged.MaxHaste = {
-    ammo="White Tathlum", head="Walahra Turban", neck="Tiercel Necklace", body="Haubergeon +1", lear="Brutal Earring",
+    ammo="White Tathlum", head="Walahra Turban", neck="Tiercel Necklace", body="Haubergeon +1", lear="Merman's Earring",
     rear="Brutal Earring", hands=gear.HasteHands, lring="Toreador's Ring", rring="Rajas Ring", back="Cerb. Mantle +1",
     waist="Velocious Belt", legs="Byakko's Haidate", feet="Dusk Ledelsens +1" }
 
     sets.engaged.Acc.MaxHaste = {
-    ammo="Fire Bomblet", head="Walahra Turban", neck="Ancient Torque", body="Haubergeon +1", lear="Suppanomimi",
+    ammo="Fire Bomblet", head="Walahra Turban", neck="Ancient Torque", body="Haubergeon +1", lear="Merman's Earring",
     rear="Brutal Earring", hands=gear.HasteHands, lring="Toreador's Ring", rring="Rajas Ring", back="Cuchulain's Mantle",
     waist="Velocious Belt", legs="Byakko's Haidate", feet="Dusk Ledelsens +1" }
 
     sets.engaged.Evasion.MaxHaste = {
     ammo="White Tathlum", head="Empress Hairpin", neck="Evasion Torque", body="Antares Harness", lear="Triton Earring",
-    rear="Triton Earring", hands="Rasetsu Tekko +1", lring="Toreador's Ring", rring="Rajas Ring", back="Corse Cape",
+    rear="Triton Earring", hands="Rasetsu Tekko +1", lring="Toreador's Ring", rring="Rajas Ring", back="Boxer's Mantle",
     waist="Koga Sarashi", legs="Kog. Hakama +1", feet="Dance Shoes +1" }
 
     sets.engaged.Acc.Evasion.MaxHaste = {
     ammo="Fire Bomblet", head="Empress Hairpin", neck="Ancient Torque", body="Antares Harness", lear="Triton Earring",
-    rear="Triton Earring", hands="Rasetsu Tekko +1", lring="Toreador's Ring", rring="Rajas Ring", back="Corse Cape",
+    rear="Triton Earring", hands="Rasetsu Tekko +1", lring="Toreador's Ring", rring="Rajas Ring", back="Boxer's Mantle",
     waist="Koga Sarashi", legs="Kog. Hakama +1", feet="Dance Shoes +1" }
 
     sets.engaged.DPS.MaxHaste = {
@@ -283,7 +282,7 @@ function init_gear_sets()
     waist="Velocious Belt", legs="Byakko's Haidate", feet="Dusk Ledelsens +1" }
     
     sets.engaged.Acc.DPS.MaxHaste = {
-    ammo="Fire Bomblet", head="Walahra Turban", neck="Tiercel Necklace", body="Ninja Chainmail", lear="Suppanomimi",
+    ammo="Fire Bomblet", head="Walahra Turban", neck="Tiercel Necklace", body="Ninja Chainmail", lear="Merman's Earring",
     rear="Brutal Earring", hands=gear.HasteHands, lring="Toreador's Ring", rring="Rajas Ring", back="Cerb. Mantle +1",
     waist="Velocious Belt", legs="Byakko's Haidate", feet="Dusk Ledelsens +1" }
 end

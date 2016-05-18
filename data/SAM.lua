@@ -8,6 +8,7 @@ function get_sets()
 
 	-- Load and initialize the include file.
 	include('Mote-Include.lua')
+	include('organizer-lib')
 end
 
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
@@ -49,17 +50,23 @@ function init_gear_sets()
 	
 	-- Sets to apply to arbitrary JAs
 	sets.precast.JA['Meditate'] = {
-	head="Myochin Kabuto", hands="Saotome Kote"}
+		head="Myochin Kabuto", hands="Saotome Kote"}
 	
 	
 	-- Sets to apply to any actions of spell.type
-	sets.precast.Waltz = { ammo="Bibiki Seashell", head="Genbu's Kabuto", waist="Warwolf Belt" }
+	sets.precast.Waltz = {
+		ammo="Bibiki Seashell", head="Genbu's Kabuto", waist="Warwolf Belt" }
 		
 	-- Sets for specific actions within spell.type
 	sets.precast.Waltz['Healing Waltz'] = { }
 
     -- Sets for fast cast gear for spells
 	sets.precast.FC = { rear="Loquacious Earring" }
+	
+    sets.precast.JA['Provoke'] = {
+	    head="Arh. Jinpachi +1", neck="Harmonia's Torque", left_ear="Hades Earring +1", right_ear="Hades Earring +1",
+	    body="Yasha Samue +1", hands="Yasha Tekko +1", left_ring="Mermaid Ring",
+	    back="Cerb. Mantle +1", waist="Warwolf Belt", legs="Yasha Hakama +1", feet="Ysh. Sune-Ate +1" }
 
     -- Fast cast gear for specific spells or spell maps
 
@@ -70,11 +77,12 @@ function init_gear_sets()
 --	back="Cerb. Mantle +1", legs="Shura Haidate +1", feet="Rutter Sabatons" } 
 
 	sets.precast.WS = { -- pre 75
-	head="Voyager Sallet", neck="Spike Necklace", lear="Tmph. Earring +1", rear="Merman's Earring",
-	body="Byrnie +1", hands="Ochiudo's Kote", ring1="Victory Ring +1", waist="Potent Belt",
-	back="Amemet Mantle +1", legs="Myochin Haidate", feet="Rutter Sabatons" } 
+		head="Shr.Znr.Kabuto +1", neck=gear.ElementalGorget, lear="Tmph. Earring +1", rear="Merman's Earring",
+		body="Haubergeon +1", hands="Alkyoneus's Brc.", ring1="Triumph Ring +1", ring2="Rajas Ring",
+		waist="Warwolf Belt", back="Amemet Mantle +1", legs="Shura Haidate +1", feet="Rutter Sabatons" } 
 	
-	sets.precast.WS['Penta Thrust'] = set_combine( sets.precast.WS, { hands="Ochiudo's Kote" } )
+	sets.precast.WS['Penta Thrust'] = set_combine( sets.precast.WS, {
+		hands="Ochiudo's Kote" } )
 
 	-- Specific weaponskill sets.
 
@@ -85,7 +93,7 @@ function init_gear_sets()
 
     -- Generic spell recast set
 	sets.midcast.FastRecast = {
-	Head="Walahra Turban", hands="Dusk Gloves +1", waist="Velocious Belt", legs="Byakko's Haidate", feet="Dusk Ledlesens +1" }
+		Head="Walahra Turban", hands=gear.HasteHands, waist="Velocious Belt", legs="Byakko's Haidate", feet=gear.HasteFeet }
 		
 	-- Specific spells
 
@@ -95,36 +103,36 @@ function init_gear_sets()
 	
 	-- Resting sets
 	sets.resting = {
-	ammo="Bibiki Seashell", head="Arh. Jinpachi +1", neck="Orochi Nodowa +1",  lear="Merman's Earring", rear="Merman's Earring", 
-	body="Arhat's Gi +1", hands="Dst. Mittens +1", ring1="Merman's Ring", ring2="Merman's Ring",
-	back="Lamia Mantle +1", waist="Resolute Belt", legs="Coral Cuisses +1", feet="Coral Greaves +1" }
+		ammo="Bibiki Seashell", head="Arh. Jinpachi +1", neck="Orochi Nodowa +1",  lear="Merman's Earring", rear="Merman's Earring", 
+		body="Arhat's Gi +1", hands="Dst. Mittens +1", ring1="Merman's Ring", ring2="Merman's Ring",
+		back="Lamia Mantle +1", waist="Resolute Belt", legs="Coral Cuisses +1", feet="Coral Greaves +1" }
 	
 
 	-- Idle sets
 	sets.idle = {
-	ammo="Bibiki Seashell", head="Arh. Jinpachi +1", neck="Orochi Nodowa +1",  lear="Merman's Earring", rear="Merman's Earring", 
-	body="Arhat's Gi +1", hands="Dst. Mittens +1", ring1="Merman's Ring", ring2="Merman's Ring",
-	back="Lamia Mantle +1", waist="Resolute Belt", legs="Coral Cuisses +1", feet="Coral Greaves +1" }
+		ammo="Bibiki Seashell", head="Arh. Jinpachi +1", neck="Orochi Nodowa +1",  lear="Merman's Earring", rear="Merman's Earring", 
+		body="Arhat's Gi +1", hands="Dst. Mittens +1", ring1="Merman's Ring", ring2="Merman's Ring",
+		back="Lamia Mantle +1", waist="Resolute Belt", legs="Coral Cuisses +1", feet="Coral Greaves +1" }
 
 	sets.idle.Town = {
-	ammo="Bibiki Seashell", head="Arh. Jinpachi +1", neck="Orochi Nodowa +1",  lear="Merman's Earring", rear="Merman's Earring", 
-	body="Arhat's Gi +1", hands="Dst. Mittens +1", ring1="Merman's Ring", ring2="Merman's Ring",
-	back="Lamia Mantle +1", waist="Resolute Belt", legs="Coral Cuisses +1", feet="Coral Greaves +1" }
+		ammo="Bibiki Seashell", head="Arh. Jinpachi +1", neck="Orochi Nodowa +1",  lear="Merman's Earring", rear="Merman's Earring", 
+		body="Arhat's Gi +1", hands="Dst. Mittens +1", ring1="Merman's Ring", ring2="Merman's Ring",
+		back="Lamia Mantle +1", waist="Resolute Belt", legs="Coral Cuisses +1", feet="Coral Greaves +1" }
 	
 	sets.idle.Weak = {
-	ammo="Bibiki Seashell", head="Arh. Jinpachi +1", neck="Orochi Nodowa +1",  lear="Merman's Earring", rear="Merman's Earring", 
-	body="Arhat's Gi +1", hands="Dst. Mittens +1", ring1="Merman's Ring", ring2="Merman's Ring",
-	back="Lamia Mantle +1", waist="Resolute Belt", legs="Coral Cuisses +1", feet="Coral Greaves +1" }
+		ammo="Bibiki Seashell", head="Arh. Jinpachi +1", neck="Orochi Nodowa +1",  lear="Merman's Earring", rear="Merman's Earring", 
+		body="Arhat's Gi +1", hands="Dst. Mittens +1", ring1="Merman's Ring", ring2="Merman's Ring",
+		back="Lamia Mantle +1", waist="Resolute Belt", legs="Coral Cuisses +1", feet="Coral Greaves +1" }
 	
 	-- Defense sets
 	sets.defense.PDT = {
-	ammo="Bibiki Seashell", head="Arh. Jinpachi +1", neck="Evasion Torque", body="Arhat's Gi +1",
-	hands="Dst. Mittens +1", ring1="Jelly Ring", legs="Dst. Subligar +1", feet="Askar Gambieras" }
+		ammo="Bibiki Seashell", head="Arh. Jinpachi +1", neck="Evasion Torque", body="Arhat's Gi +1",
+		back="Boxer's Mantle", hands="Dst. Mittens +1", ring1="Jelly Ring", legs="Dst. Subligar +1", feet="Askar Gambieras" }
 
 	sets.defense.MDT = {
-	head="Coral Visor +1", neck="Jeweled Collar +1", body="Cor. Scale Mail +1", hands="Coral Fng. Gnt. +1",
-	ring1="Merman's Ring", ring2="Merman's Ring", waist="Resolute Belt", lear="Merman's Earring", waist="Resolute Belt",
-	rear="Merman's Earring", back="Lamia Mantle +1", legs="Coral Cuisses +1", feet="Askar Gambieras" }
+		head="Coral Visor +1", neck="Jeweled Collar +1", body="Cor. Scale Mail +1", hands="Coral Fng. Gnt. +1",
+		ring1="Merman's Ring", ring2="Merman's Ring", waist="Resolute Belt", lear="Merman's Earring", waist="Resolute Belt",
+		rear="Merman's Earring", back="Lamia Mantle +1", legs="Coral Cuisses +1", feet="Askar Gambieras" }
 
     -- Gear to wear for kiting
 	sets.Kiting = {}
@@ -140,29 +148,29 @@ function init_gear_sets()
 	
 	-- Normal melee group
 	sets.engaged = {
-	ammo="Black Tathlum", Head="Walahra Turban", Neck="Acient Torque", lear="Merman's Earring", rear="Brutal Earring",
-	body="Haubergeon +1", hands="Dusk Gloves +1", ring1="Toreador's Ring", ring2="Rajas Ring",
-	back="Cerb. Mantle +1", waist="Velocious Belt", legs="Byakko's Haidate", feet="Dusk Ledlesens +1" }
+		ammo="Black Tathlum", Head="Walahra Turban", Neck="Accient Torque", lear="Merman's Earring", rear="Brutal Earring",
+		body="Haubergeon +1", hands=gear.HasteHands, ring1="Toreador's Ring", ring2="Rajas Ring",
+		back="Cerb. Mantle +1", waist="Velocious Belt", legs="Byakko's Haidate", feet=gear.HasteFeet }
 
 --	sets.engaged.GK = {
 --	ammo="Black Tathlum", Head="Walahra Turban", Neck="Acient Torque", lear="Merman's Earring", rear="Brutal Earring",
---	body="Haubergeon +1", hands="Dusk Gloves +1", ring1="Toreador's Ring", ring2="Rajas Ring",
---	back="Cerb. Mantle +1", waist="Velocious Belt", legs="Byakko's Haidate", feet="Dusk Ledlesens +1" }
+--	body="Haubergeon +1", hands=gear.HasteHands, ring1="Toreador's Ring", ring2="Rajas Ring",
+--	back="Cerb. Mantle +1", waist="Velocious Belt", legs="Byakko's Haidate", feet=gear.HasteFeet }
 
 	sets.engaged.GK = { -- till 75 gears
-	ammo="Tiphia Sting", Head="Zeal Cap +1", Neck="Peacock Amulet", lear="Merman's Earring", rear="Merman's Earring",
-	body="Haubergeon +1", hands="Ochiudo's Kote", ring1="Toreador's Ring", ring2="Rajas Ring",
-	back="Amemet Mantle +1", waist="Velocious Belt", legs="Shm. Haidate", feet="Fuma Kyahan" }
+		ammo="Tiphia Sting", sub="Pole Grip", Head="Zeal Cap +1", Neck="Peacock Amulet", lear="Merman's Earring", rear="Merman's Earring",
+		body="Haubergeon +1", hands=gear.HasteHands, ring1="Toreador's Ring", ring2="Rajas Ring",
+		back="Amemet Mantle +1", waist="Velocious Belt", legs="Shm. Haidate", feet=gear.HasteFeet }
 
 --	sets.engaged.PLM = {
---	ammo="Black Tathlum", Head="Walahra Turban", Neck="Acient Torque", lear="Merman's Earring", rear="Brutal Earring",
---	body="Haubergeon +1", hands="Dusk Gloves +1", ring1="Toreador's Ring", ring2="Rajas Ring",
---	back="Cerb. Mantle +1", waist="Velocious Belt", legs="Byakko's Haidate", feet="Dusk Ledlesens +1" }
+	--	ammo="Black Tathlum", Head="Walahra Turban", Neck="Acient Torque", lear="Merman's Earring", rear="Brutal Earring",
+	--	body="Haubergeon +1", hands=gear.HasteHands, ring1="Toreador's Ring", ring2="Rajas Ring",
+	--	back="Cerb. Mantle +1", waist="Velocious Belt", legs="Byakko's Haidate", feet=gear.HasteFeet }
 
 	sets.engaged.PLM = { -- till 75 gears
-	ammo="Tiphia Sting", Head="Zeal Cap +1", Neck="Peacock Amulet", lear="Merman's Earring", rear="Merman's Earring",
-	body="Haubergeon +1", hands="Dusk Gloves +1", ring1="Toreador's Ring", ring2="Rajas Ring",
-	back="Jaguar Mantle", waist="Velocious Belt", legs="Shm. Haidate", feet="Fuma Kyahan" }
+		ammo="Tiphia Sting", Head="Zeal Cap +1", Neck="Peacock Amulet", lear="Merman's Earring", rear="Merman's Earring",
+		body="Haubergeon +1", hands=gear.HasteHands, ring1="Toreador's Ring", ring2="Rajas Ring",
+		back="Amemet Mantle +1", waist="Velocious Belt", legs="Shm. Haidate", feet=gear.HasteFeet }
 
 
 	--------------------------------------

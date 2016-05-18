@@ -6,8 +6,8 @@
 function get_sets()
     mote_include_version = 2
 
-	-- Load and initialize the include file.
-	include('Mote-Include.lua')
+    -- Load and initialize the include file.
+    include('Mote-Include.lua')
 end
 
 
@@ -28,7 +28,7 @@ function user_setup()
     state.IdleMode:options('Normal', 'PDT')
 
     brd_daggers = S{'Izhiikoh', 'Vanir Knife', 'Atoyac', 'Aphotic Kukri', 'Sabebus'}
-    pick_tp_weapon()
+  --  pick_tp_weapon()
     
     -- Adjust this if using the Terpander (new +song instrument)
     info.ExtraSongInstrument = 'Daurdabla'
@@ -53,31 +53,31 @@ function user_unload()
 
 end
 
-function init_gear_sets()	
+function init_gear_sets()   
     --------------------------------------
     -- Precast sets
     --------------------------------------
-	
+    
     -- Sets to apply to arbitrary JAs
 
     -- Sets to apply to any actions of spell.type
     sets.precast.Waltz = {}
-    	
+        
     -- Sets for specific actions within spell.type
     sets.precast.Waltz['Healing Waltz'] = {}
 
     -- Sets for fast cast gear for spells
-    sets.precast.FC = { rear="Loquacious Earring", body="Sheikh Manteel" }
+    sets.precast.FC = { rear="Loquacious Earring",body="Sheikh Manteel", hands="Dusk Gloves +1", legs="Byakko's Haidate", feet="Dusk Ledelsens +1" }
 
     sets.precast.FC.BardSong = { sub="Vivid Strap +1", head="Walahra Turban", lear="Wind Earring", 
     body="Sheikh Manteel", hands="Sheikh Gages", rear="Loquacious Earring", ring1="Merman's Ring", legs="Byakko's Haidate",
     ring2="Minstrel's Ring", feet="Dusk Ledelsens +1" }
 
     -- Fast cast gear for specific spells or spell maps
-    sets.precast.FC.Utsusemi = { }
+    sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, { } )
 
     sets.midcast.Ballad = { ranged="Angel Lyre", head="Walahra Turban", body="Sheikh Manteel", hands="Dusk Gloves +1",
-    waist="Velocious Belt", feet="Dusk Ledelsens +1", legs="Byakko's Haidate" }
+    waist="Sonic Belt +1", feet="Dusk Ledelsens +1", legs="Byakko's Haidate" }
 
     sets.midcast.Lullaby = {
     main="Chatoyant Staff", sub="Light Grip", ranged="Mary's Horn", neck="Piper's Torque", lear="Wind Earring" }
@@ -93,6 +93,9 @@ function init_gear_sets()
     sets.midcast.Minuet = {
     main="Chanter's Staff", ranged="Cornette +2", neck="Piper's Torque", lear="Wind Earring", ring1="Nereid Ring",
     legs="Choral Cannions" }
+
+    sets.midcast.Mambo = {
+    ranged="Hellish Bugle" }
 
     sets.midcast.Minne = { }
 
@@ -114,33 +117,43 @@ function init_gear_sets()
     sets.midcast['Magic Finale'] = {
     main="Chatoyant Staff", sub="Light Grip", ranged="Military Harp", neck="String Torque", lear="String Earring" }
 
+    sets.midcast['Raptor Mazurka'] = {
+    ranged="Harlequin's Horn" }
+
 
     -- Weaponskill sets
     sets.precast.WS = {
-    head="Hct. Cap +1", neck=gear.ElementalGorget, lear="Pixie Earring", rear="Brutal Earring",
-    body="Antares Harness", hands="Hct. Mittens +1", lring="Adroit Ring +1", rring="Rajas Ring"
-    back="Cerb. Mantle +1", waist="Cuchulain's Belt", legs="Hct. Subligar +1", feet="Hct. Leggings +1" }
+    head="Walkure Mask",
+    body="Bard's Jstcorps",
+    hands="Hct. Mittens +1",
+    legs="Byakko's Haidate",
+    feet="Hct. Leggings +1",
+    neck="Ancient Torque",
+    waist="Cuchulain's Belt",
+    left_ear="Merman's Earring",
+    right_ear="Merman's Earring",
+    left_ring="Triumph Ring +1",
+    right_ring="Triumph Ring +1",
+    back="Cuchulain's Mantle",
+}
     
     -- Specific weaponskill sets.
 
-    sets.precast.WS['Evisceration'] = set_combine( sets.precast.WS, { lring="Toreador's Ring" } )
-
-	
+    
     --------------------------------------
     -- Midcast sets
     --------------------------------------
 
     -- Generic spell recast set
-    sets.midcast.FastRecast = { 
-    ranged="Angel Lyre", head="Walahra Turban", body="Sheikh Manteel", hands="Dusk Gloves +1",
-    waist="Velocious Belt", legs="Byakko's Haidate", feet="Dusk Ledelsens +1" }
-		
+    sets.midcast.FastRecast = { ranged="Angel Lyre", head="Walahra Turban", body="Sheikh Manteel", hands="Dusk Gloves +1",
+    waist="Sonic Belt +1", feet="Dusk Ledelsens +1", legs="Byakko's Haidate" }
+        
     -- Specific spells
     sets.midcast.Utsusemi = {}
 
     -- For song buffs (duration and AF3 set bonus)
     sets.midcast.SongEffect = {
-    head="Bard's Roundlet", rear="Singing Earring", body="Minstrel's Coat", waist="Velocious Belt",
+    head="Bard's Roundlet", rear="Singing Earring", body="Minstrel's Coat", waist="Sonic Belt +1",
     hands="Choral Cuffs", back="Umbra Cape" }
 
     -- For song defbuffs (duration primary, accuracy secondary)
@@ -156,7 +169,7 @@ function init_gear_sets()
 
     -- Song-specific recast reduction
     sets.midcast.SongRecast = {
-    head="Walahra Turban", rear="Loquacious Earring", body="Sheikh Manteel", hands="Sheikh Gages", waist="Velocious Belt",
+    head="Walahra Turban", rear="Loquacious Earring", body="Sheikh Manteel", hands="Sheikh Gages", waist="Sonic Belt +1",
     legs="Byakko's Haidate", feet="Dusk Ledelsens +1" }
 
 
@@ -167,7 +180,7 @@ function init_gear_sets()
     sets.midcast.Curaga = sets.midcast.Cure
 
     sets.midcast.Stoneskin = {
-    main="Chatoyant Staff", sub="Light Grip", range="Iron Ram Horn", head="Goliard Chapaeu", body="Mahatma Hpl.", hands="Dvt. Mitts +1",
+    main="Chatoyant Staff", sub="Light Grip", range="Iron Ram Horn", head="Zenith Crown +1", body="Mahatma Hpl.", hands="Dvt. Mitts +1",
     legs="Mahatma Slops", feet="Suzaku's Sune-ate", neck="Promise Badge", waist="Pythia Sash +1", left_ear="Celestial Earring", right_ear="Celestial Earring",
     left_ring="Celestial Ring", right_ring="Celestial Ring", back="Ixion Cape"  }
         
@@ -178,32 +191,28 @@ function init_gear_sets()
     
     -- Resting sets
     sets.resting = {
-    main=gear.Staff.HMP, head="Goliard Chapaeu", neck="Beak Necklace +1", lear="Rapture Earring", rear="Antivenom Earring",
+    main="Chatoyant Staff", head="Mirror Tiara", neck="Beak Necklace +1", lear="Rapture Earring", rear="Antivenom Earring",
     body="Mahatma Hpl.", hands="", ring1="Celestial Ring", ring2="Celestial Ring", back="Invigorating Cape",
     waist="Qiqirn Sash +1", legs="Baron's Slops", feet="Arborist Nails" }
     
     
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
-    sets.idle = {
-    ammo="Hedgehog Bomb",
+    sets.idle = { ammo="Hedgehog Bomb",
     main=gear.Staff.PDT, neck="Orochi Nodowa +1", lear="Merman's Earring", rear="Merman's Earring",
     body="Ixion Cloak", hands="Dst. Mittens +1", ring1="Merman's Ring", ring2="Merman's Ring",
     back="Umbra Cape", waist="Resolute Belt", legs="Dst. Subligar +1", feet="Dst. Leggings +1" }
 
-    sets.idle.PDT = {
-    ammo="Hedgehog Bomb",
+    sets.idle.PDT = { ammo="Hedgehog Bomb",
     main=gear.Staff.PDT, neck="Orochi Nodowa +1",lear="Merman's Earring", rear="Merman's Earring",
     body="Ixion Cloak", hands="Dst. Mittens +1", ring1="Merman's Ring", ring2="Merman's Ring",
     back="Umbra Cape", waist="Resolute Belt", legs="Dst. Subligar +1", feet="Dst. Leggings +1"}
 
-    sets.idle.Town = {
-    ammo="Hedgehog Bomb",
+    sets.idle.Town = { ammo="Hedgehog Bomb",
     main=gear.Staff.PDT, neck="Orochi Nodowa +1",lear="Merman's Earring", rear="Merman's Earring",
     body="Ixion Cloak", hands="Dst. Mittens +1", ring1="Merman's Ring", ring2="Merman's Ring",
     back="Umbra Cape", waist="Resolute Belt", legs="Dst. Subligar +1", feet="Dst. Leggings +1" }
     
-    sets.idle.Weak = {
-    ammo="Hedgehog Bomb",
+    sets.idle.Weak = { ammo="Hedgehog Bomb",
     main=gear.Staff.PDT, neck="Orochi Nodowa +1",lear="Merman's Earring", rear="Merman's Earring",
     body="Ixion Cloak", hands="Dst. Mittens +1", ring1="Merman's Ring", ring2="Merman's Ring",
     back="Umbra Cape", waist="Resolute Belt", legs="Dst. Subligar +1", feet="Dst. Leggings +1" }
@@ -214,12 +223,12 @@ function init_gear_sets()
     sets.defense.PDT = {
     main=gear.Staff.PDT, head="Darksteel Cap +1", neck="Orochi Nodowa +1",lear="Merman's Earring", rear="Merman's Earring",
     body=" Dst. Harness +1", hands="Dst. Mittens +1", ring1="Jelly Ring", ring2="Merman's Ring",
-    back="Umbra Cape", waist="Rsolute Belt", legs="Dst. Subligar +1", feet="Dst. Leggings +1" }
+    back="Umbra Cape", waist="Resolute Belt", legs="Dst. Subligar +1", feet="Dst. Leggings +1" }
 
     sets.defense.MDT = {
     main=gear.Staff.PDT, neck="Orochi Nodowa +1",lear="Merman's Earring", rear="Merman's Earring",
     body="Avalon Breastplate", hands="Merman's Bangles", ring1="Merman's Ring", ring2="Merman's Ring",
-    back="Resentment Cape", waist="Rsolute Belt", legs="", feet="" }
+    back="Resentment Cape", waist="Resolute Belt", legs="", feet="" }
 
     sets.Kiting = { }
     --------------------------------------
@@ -230,12 +239,12 @@ function init_gear_sets()
     -- sets if more refined versions aren't defined.
     -- If you create a set with both offense and defense modes, the offense mode should be first.
     -- EG: sets.engaged.Dagger.Accuracy.Evasion
-	
+    
     -- Normal melee group
     sets.engaged = {
-    head="Walahra Turban ", neck="Peacock Amulet", lear="Merman's Earring", rear="Merman's Earring",
-    body="Sheikh Manteel", hands="Dusk Gloves +1", ring1="Toreador's Ring", ring2="Rajas Ring",
-    back="Cerb. Mantle +1", waist="Velocious Belt", legs="Byakko's Haidate", feet="Dusk Ledelsens +1" }
+    head="Walahra Turban", neck="Ancient Torque", lear="Merman's Earring", rear="Merman's Earring",
+    body="Sheikh Manteel", hands="Dusk Gloves +1", ring1="Toreador's Ring", ring2="Toreador's Ring",
+    back="Cuchulain's Mantle", waist="Sonic Belt +1", legs="Byakko's Haidate", feet="Dusk Ledelsens +1" }
 
     --------------------------------------
     -- Custom buff sets
